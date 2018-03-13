@@ -1,0 +1,638 @@
+doctype
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(content='width=device-width, initial-scale=1.0, user-scalable=no', name='viewport')
+		title Unilot
+		link(rel="stylesheet" href="/assets/css/flexboxgrid.min.css" type="text/css")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&amp;subset=latin-ext" rel="stylesheet")
+		link(rel="stylesheet", href="/assets/css/counter.css")
+		link(rel="stylesheet", href="/assets/css/fonts.css")
+		link(rel="stylesheet", href="/assets/css/styles.css")
+
+body
+	block content
+	#menu.slideout-menu.slideout-menu-right
+		.menu-close
+			span
+		.row
+			.col-xs-12
+				ul
+					li
+						a(href="#") Как это работает?
+					li
+						a(href="#") История розыгрышей
+					li
+						a(href="#") Мои кошельки
+					li
+						a(href="#") Сайт ICO
+
+				.lng
+					a(onclick="$('#lng').slideToggle('slow');" href="javascript://") Русский
+						i.icon-caret-down
+						img(src="/assets/img/russia.png", alt="")
+					.lng__block#lng(style="display: none")
+						a(href="#") English
+							img(src="/assets/img/usa.png", alt="")
+						a(href="#") Русский
+							img(src="/assets/img/russia.png", alt="")
+				.unilot
+					.row
+						.col-xs-5
+							img(src="/assets/img/unilot.png", alt="")
+							p Скачайте приложение Unilot App и будьте всегда в курсе новых лотерей
+							a(href="#") App Store
+								i.icon-apple
+							a(href="#") Google Play
+								img(src="/assets/img/GooglePlay.png", alt="")
+						.col-xs-7
+							img(src="/assets/img/phone.png", alt="")
+				.social
+					i.icon-facebook
+					i.icon-paper-plane
+					i.icon-reddit
+					i.icon-twitter
+	#panel.slideout-panel.slideout-panel-right
+		.container
+			.scene
+				div(data-depth='0.6')
+					img(src="/assets/img/parallax.png", alt="")
+		.app#btn1(style='display:block')
+			.app__content
+				.row
+					.col-xs-1.center-xs
+						a(onclick="$('#btn1').slideToggle('slow');" href="javascript://").cross
+							span
+					.col-xs-3
+						img(src="/assets/img/app-logo.png", alt="")
+					.col-xs-8
+						h4 Unilot блокчейн лотерея
+						p Держите руку на пульсе с нашим приложением
+						i.icon-star
+						i.icon-star
+						i.icon-star
+						i.icon-star
+						i.icon-star_half
+					.col-xs-12.end-xs
+						a(href="#").app__btn Установить
+		header.header
+			.container
+				.row.middle-xs
+					.col-sm-1.col-xs-1
+						.top-line-anchor
+							#sticky.sticky-element
+								.sticky-anchor
+								.sticky-content
+									.menu-open
+										a#btn(href='#menu')
+											span
+					.col-sm-1
+						.header__lng
+							a(onclick="$('#header__lng').slideToggle('slow');" href="javascript://") RU
+								i.icon-caret-down
+								img(src="/img/russia.png", alt="")
+							.header__lng__block#header__lng(style="display: none")
+								a(href="#") ENG
+									img(src="/img/usa.png", alt="")
+								a(href="#") RU
+									img(src="/img/russia.png", alt="")
+					.col-md-offset-2.col-md-3.col-sm-3.col-sm-offset-1.col-xs-10.start-sm.center-xs
+						.header__logo
+							a(href="index.html")
+								img(src="/assets/img/logo__header.png", alt="")
+					.col-md-5.end-sm.col-sm-6.col-xs-12.center-xs
+						.header__btn
+							a(href="#").btn.btn--lilac ICO
+							a(href="#").btn Принять участие
+						
+								
+		//- block content
+		section.hat
+			.container#link
+				.row
+					.col-md-offset-2.col-md-8.center-xs.col-sm-offset-1.col-sm-10.col-xs-12
+						.heading
+							h1 Unilot — блокчейн лотерея с самым высоким шансом на выигрыш!
+							p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
+				
+				.jackpot
+					.row.center-xs
+						
+						//- Дневная игра
+						.col-md-4.col-xs-12
+							.jackpot__block
+								h4 Дневная
+								p Джекпот
+								span 123,123
+									img(src="assets/img/jackpot.png", alt="ETH")
+								.jackpot__block__maney
+									p US $123,456
+								.jackpot__block__timer
+									p Успей принять участие
+									.jackpot__block__timer_clock1
+										p 05
+										span :
+										p 56
+										span :
+										p 59
+								.row
+									.col-xs-12
+										a(href="#1").btn.btn--block
+											i.icon-angle-down
+								
+						
+						//- Недельная игра
+						.col-md-4.col-xs-12
+							.jackpot__block.jackpot__block--color
+								h4 Недельная
+								p Джекпот
+								span 123,123
+									img(src="assets/img/jackpot.png", alt="ETH")
+								.jackpot__block__maney
+									p US $123,456
+								.jackpot__block__timer
+									p Успей принять участие
+									.jackpot__block__timer_clock2
+										p 10
+										span :
+										p 20
+										span :
+										p 12
+								.row
+									.col-xs-12
+										a(href="#2").btn.btn--block
+											i.icon-angle-down
+						
+						//- Бонусная игра
+						.col-md-4.col-xs-12
+							.jackpot__block.jackpot__block--color2
+								h4 Бонусная
+								p Джекпот
+								span 123,123
+									img(src="assets/img/jackpot.png", alt="ETH")
+								.jackpot__block__maney
+									p US $450,700
+								.jackpot__block__timer
+									p Успей принять участие
+									.jackpot__block__timer_clock3
+										p 05
+										span :
+										p 56
+										span :
+										p 59
+								.row
+									.col-xs-12
+										a(href="#3").btn.btn--block
+											i.icon-angle-down
+		
+		section.lottery#1
+			.container
+				.row
+					.col-md-5.col-xs-12
+						.row
+							.col-md-12.col-xs-6
+								.heading
+									h2 Дневная лотерея
+							.col-md-12.col-sm-8.col-xs-12
+								p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
+					.col-md-7.col-xs-12.start-md.center-xs
+						.lottery__rally
+							.row
+								.col-sm-offset-2.col-sm-9.col-xs-12.col-md-10
+									.row
+										.col-md-10.end-xs.col-xs-12
+											h3 Текущий розыгрыш
+										.col-md-offset-1.col-md-9.end-xs.col-sm-10.col-sm-offset-2.col-xs-12
+											#flip-counter.flip-counter
+										.col-xs-12.end-xs
+											b US $ 3 787,50
+										.col-md-4.col-sm-5.col-xs-12.end-sm.center-xs
+											p До следующего розыгрыша:
+										.col-md-6.col-sm-7.col-xs-12.end-sm.center-xs
+											.lottery__rally__timer1
+												//- .row.end-sm.center-xs
+												//- 	.col-xs-3
+												//- 		p.timer_hour 03
+												//- 		.hour Часа
+												//- 	.col-xs-1
+												//- 		span :
+												//- 	.col-xs-3
+												//- 		p.timer_minute 45
+												//- 		.minute Минут
+												//- 	.col-xs-1
+												//- 		span :
+												//- 	.col-xs-3
+												//- 		p.timer_second 59
+												//- 		.second Секунд
+										.col-md-10.col-sm-11.col-xs-12.center-xs
+											a(href="#").btn.lottery__rally__timer1--btn
+												p Принять участие
+												span.flex.end-xs 0,01 Eth
+					.col-xs-12
+						.heading
+							h4 Прошедшие лотереи
+						.lottery__past
+							.row.center-xs
+								.col-md-4.col-xs-12
+									.lottery__past__content
+										p Розыгрыш от: <span>31.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+								.col-md-4.col-xs-12
+									.lottery__past__content
+										p Розыгрыш от: <span>30.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+								.col-md-4.col-xs-12
+									.lottery__past__content.lottery__past__content--border
+										p Розыгрыш от: <span>29.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+		section.lottery.lottery--none#2
+			.container
+				.row
+					.col-xs-5
+						.heading
+							h2 Недельная лотерея
+						p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
+					.col-xs-7
+						.lottery__rally.lottery__rally--bg1
+							.row.bottom-xs
+								.col-xs-offset-2.col-xs-10
+									.row
+										.col-xs-10.end-xs
+											h3 Текущий розыгрыш
+										.col-xs-offset-1.col-xs-9.end-xs
+											#flip-counter1.flip-counter
+										.col-xs-12.end-xs
+											b US $ 3 787,50
+										.col-xs-4.end-xs
+											p До следующего розыгрыша:
+										.col-md-6.col-sm-7.col-xs-12.end-sm.center-xs
+											.lottery__rally__timer2
+												.row.end-sm.center-xs
+													.col-xs-3
+														p 03
+														.hour Часа
+													.col-xs-1
+														span :
+													.col-xs-3
+														p 45
+														.minute Минут
+													.col-xs-1
+														span :
+													.col-xs-3
+														p 59
+														.second Секунд
+									.col-md-10.col-sm-11.col-xs-12.center-xs
+										a(href="#").btn.lottery__rally__timer2--btn
+											p Принять участие
+											span.flex.end-xs 0,01 Eth
+					.col-xs-12
+						.heading
+							h4 Прошедшие лотереи
+						.lottery__past
+							.row.center-xs
+								.col-xs-4
+									.lottery__past__content
+										p Розыгрыш от: <span>31.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+								.col-xs-4
+									.lottery__past__content
+										p Розыгрыш от: <span>30.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+								.col-xs-4
+									.lottery__past__content.lottery__past__content--border
+										p Розыгрыш от: <span>29.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+		section.lottery.lottery--none#3
+			.container
+				.row
+					.col-xs-5
+						.heading
+							h2 Бонусная лотерея
+						p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
+					.col-xs-7
+						.lottery__rally.lottery__rally--bg2
+							.row.bottom-xs
+								.col-xs-offset-2.col-xs-10
+									.row
+										.col-xs-10.end-xs
+											h3 Текущий розыгрыш
+										.col-xs-offset-1.col-xs-9.end-xs
+											#flip-counter2.flip-counter
+										.col-xs-12.end-xs
+											b US $ 3 787,50
+										.col-xs-7.end-xs
+											p.padding До следующего<br> розыгрыша:
+										.col-xs-5
+											.lottery__rally__timer3.lottery__rally__timer3--color
+												span 29
+												p Дней
+					.col-xs-12
+						.heading
+							h4 Прошедшие лотереи
+						.lottery__past
+							.row.center-xs
+								.col-xs-4
+									.lottery__past__content
+										p Розыгрыш от: <span>31.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+								.col-xs-4
+									.lottery__past__content
+										p Розыгрыш от: <span>30.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+								.col-xs-4
+									.lottery__past__content.lottery__past__content--border
+										p Розыгрыш от: <span>29.08.17</span>
+										.lottery__past__content__block
+											.row
+												.col-xs-4
+													p Джекпот 
+													span 69,995
+														p eth
+												.col-xs-4
+													p Участников 
+													span 10.753
+												.col-xs-4
+													p Победителей 
+													span 500
+												.col-xs-12.center-xs
+													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+		section.subs
+			.conteiner
+				.col-md-offset-3.col-md-6.col-xs-12.center-xs
+					img(src="/img/subs1.png", alt="")
+					h2 <span>for</span> Tokenholder’s
+					p Станьте нашим токен-холдером и у вас появится возможность принять участие в отдельном розыгрыше большого джекпота, мы можем оповестить вас о начале ICO
+					form
+						input(type="email" name="e-mail" placeholder="Ваш email")
+						a(href="#").btn Отправить
+
+		.work-question
+			section.work
+				.container
+					.row
+						.col-xs-12.center-xs
+							.heading
+								h3 Как это работает
+						.col-sm-8.col-sm-offset-2.col-xs-12.center-xs
+							.work__heading
+								p В бонусной лотерее принимают участие игроки принявшие участие в течение месяца в дневной или недельном розыгрыше, но не ставшие победителями.
+					.row.center-xs.between-xs
+						.col-md-4.col-xs-12
+							.work__block.work__block--margin
+								.work__block__img
+								p Покупает билет
+						.col-xs-4
+							.work__block.work__block--margin.work__block--none
+								.work__block__img
+								p Участвуете в розыгрыше (Дневной, Недельный)
+						.col-xs-4
+							.work__block.work__block--none
+								.work__block__img
+								p Получаете выигрыш (или попадаете в бесплатный бонусный розыгрыш)
+			section.question
+				.container
+					.row
+						.col-xs-12.center-xs
+							.heading
+								h3 Часто задаваемые вопросы
+						.col-xs-12
+							.row
+								.col-md-offset-1.col-md-10.col-xs-12
+									.question__content.question__content--border
+										.row.middle-xs
+											.col-xs-12
+												a(onclick="$('#name').slideToggle('slow');" href="javascript://") Как попасть в дневной или недельный розыгрыш?
+													i.icon-angle-down
+											.col-xs-12
+												p#name(style='display:none') В Личном кабинете в меню "Мои объявления" напротив интересуемого объявления нажимаете на иконку "карандаш" (редактировать). В самом объявлении в поле "Цена" вводите измененную стоимость (цифру). Далее нажимаете на "Активировать"
+													i.icon-angle-down
+									.question__content
+										.row.middle-xs
+											.col-xs-12
+												a(onclick="$('#name1').slideToggle('slow');" href="javascript://") Как распределяется призовой фонд?
+													i.icon-angle-down
+											.col-xs-12
+												p#name1(style='display:none') В Личном кабинете в меню "Мои объявления" напротив интересуемого объявления нажимаете на иконку "карандаш" (редактировать). В самом объявлении в поле "Цена" вводите измененную стоимость (цифру). Далее нажимаете на "Активировать"
+									.question__content
+										.row.middle-xs
+											.col-xs-12
+												a(onclick="$('#name2').slideToggle('slow');" href="javascript://") Как попасть в бонусную (месячную) лотерею?
+													i.icon-angle-down
+											.col-xs-12
+												p#name2(style='display:none') В Личном кабинете в меню "Мои объявления" напротив интересуемого объявления нажимаете на иконку "карандаш" (редактировать). В самом объявлении в поле "Цена" вводите измененную стоимость (цифру). Далее нажимаете на "Активировать"
+									.question__content
+										.row.middle-xs
+											.col-xs-12
+												a(onclick="$('#name3').slideToggle('slow');" href="javascript://") Где можно следить за актуальными розыгрышами?
+													i.icon-angle-down
+											.col-xs-12
+												p#name3(style='display:none') В Личном кабинете в меню "Мои объявления" напротив интересуемого объявления нажимаете на иконку "карандаш" (редактировать). В самом объявлении в поле "Цена" вводите измененную стоимость (цифру). Далее нажимаете на "Активировать"
+									.question__content
+										.row.middle-xs
+											.col-xs-12
+												a(onclick="$('#name4').slideToggle('slow');" href="javascript://") Сколько стоит билет и сколько я могу выиграть?
+													i.icon-angle-down
+											.col-xs-12
+												p#name4(style='display:none') В Личном кабинете в меню "Мои объявления" напротив интересуемого объявления нажимаете на иконку "карандаш" (редактировать). В самом объявлении в поле "Цена" вводите измененную стоимость (цифру). Далее нажимаете на "Активировать"
+			section.form
+				.container
+					.col-xs-12.center-xs
+						.heading
+							h3 Остались вопросы? Напишите нам
+					.col-md-offset-3.col-md-6.col-xs-12
+						form
+							p Ваш email
+							input(type="email" name="e-mail")
+							p Сообщение
+							textarea
+							.g-recaptcha(data-sitekey="6Lde0zYUAAAAAGKQl2W5LAINNI0q1Rd2NUiBa2lq")
+							a(href="#").btn Отправить
+
+		footer.footer
+			.container
+				.row.middle-xs
+					.col-md-offset-4.col-md-2.col-sm-offset-3.col-sm-2.col-xs-12.start-sm.center-xs
+						img(src="/assets/img/logo__footer.png", alt="")
+					.col-md-3.col-sm-offset-1.col-sm-5.col-xs-12.start-sm.center-xs
+						.row
+							.col-xs-3
+								i.icon-facebook
+							.col-xs-3
+								i.icon-paper-plane
+							.col-xs-3
+								i.icon-reddit
+							.col-xs-3
+								i.icon-twitter
+							
+	#login-form(style="display:none")
+		.tabs
+			ul.tabs__caption.row
+				li.active.col-xs-6 Авторизация
+				li.col-xs-6.col-xs-6.end-xs Регистрация
+			.tabs__content.active
+				.row
+					.col-xs-12
+						form
+							h4 Введите номер Вашего телефон или электронную почту и пароль, зарегистрированный в нашем сервисе
+							p Номер телефона или электронная почта
+							input(type="text" name="e-mail" placeholder="Телефон или E-mail")
+							p Пароль
+							input(type="password" name="password" placeholder="••••••••••••")
+							button Войти
+			.tabs__content
+				.row
+					.col-xs-12
+						form
+							p Введите номер телефона
+							input#phone(type="tel" name="phone" placeholder="+79000000000")
+							button Получить СМС
+							p Введите смс, полученный на Ваш телефон
+							input(type="password" name="password" placeholder="Введите код")
+							button Далее
+	#policy(style="display:none")
+		.tabs
+			ul.tabs__caption.row
+				li.col-xs-6 Авторизация
+				li.active.col-xs-6.end-xs Регистрация
+			.tabs__content
+				.row
+					.col-xs-12
+						form
+							h4 Введите номер Вашего телефон или электронную почту и пароль, зарегистрированный в нашем сервисе
+							p Номер телефона или электронная почта
+							input(type="text" name="e-mail" placeholder="Телефон или E-mail")
+							p Пароль
+							input(type="password" name="password" placeholder="••••••••••••")
+							button Войти
+			.tabs__content.active
+				.row
+					.col-xs-12
+						form
+							p Введите номер телефона
+							input#phone(type="tel" name="phone" placeholder="+79000000000")
+							button Получить СМС
+							p Введите смс, полученный на Ваш телефон
+							input(type="password" name="password" placeholder="Введите код")
+							button Далее
+							p Заполните данные
+							input(type="text" name="name" placeholder="Имя")
+							input(type="text" name="surname" placeholder="Фамилия")
+							input(type="text" name="login" placeholder="Ваше имя в сети (логин)")
+							input(type="email" name="e-mail" placeholder="Электронная почта")
+							input(type="password" id="pass" name="password" placeholder="Пароль")
+							input(type="password" id="passch" name="password" placeholder="Подтвердить пароль")
+							button Зарегестрироваться
+
+	block script
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js")
+		script(src="/assets/js/slideout.js")
+		script(src="/assets/js/flipcounter.min.js")
+		script(src="/assets/js/jquery.time-to.js")
+		script(src='https://www.google.com/recaptcha/api.js')
+		script(src="/assets/js/main.js")

@@ -1,0 +1,26 @@
+{
+  "name": "@unilot/web-app",
+  "version": "1.0.0",
+  "description": "Unilot Lottery web application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unilot/web-app"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "moment": "^2.21.0",
+    "popsicle": "^9.2.0",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "mocha": "^5.0.1"
+  }
+}

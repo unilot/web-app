@@ -1,0 +1,71 @@
+@font-face
+{
+    font-family: 'icomoon';
+    font-weight: normal;
+    font-style: normal; 
+
+    src: url('/assets/fonts/icomoon.eot?wzxjzt');
+    src: url('/assets/fonts/icomoon.eot?wzxjzt#iefix') format('embedded-opentype'), url('/assets/fonts/icomoon.ttf?wzxjzt') format('truetype'), url('/assets/fonts/icomoon.woff?wzxjzt') format('woff'), url('/assets/fonts/icomoon.svg?wzxjzt#icomoon') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-']
+{
+    font-family: 'icomoon' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+
+    text-transform: none;
+
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star_half:before
+{
+    content: '\e839';
+}
+
+.icon-star:before
+{
+    content: '\e902';
+}
+
+.icon-caret-down:before
+{
+    content: '\f0d7';
+}
+
+.icon-angle-down:before
+{
+    content: '\f107';
+}
+
+.icon-apple:before
+{
+    content: '\f179';
+}
+
+.icon-paper-plane:before,
+.icon-send:before
+{
+    content: '\f1d8';
+}
+
+.icon-reddit:before
+{
+    content: '\eac6';
+}
+
+.icon-facebook:before
+{
+    content: '\e900';
+}
+
+.icon-twitter:before
+{
+    content: '\e901';
+}
