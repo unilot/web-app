@@ -121,72 +121,17 @@ body
 						
 						//- Дневная игра
 						.col-md-4.col-xs-12
-							.jackpot__block
-								h4 Дневная
-								p Джекпот
-								span 123,123
-									img(src="assets/img/jackpot.png", alt="ETH")
-								.jackpot__block__maney
-									p US $123,456
-								.jackpot__block__timer
-									p Успей принять участие
-									.jackpot__block__timer_clock1
-										p 05
-										span :
-										p 56
-										span :
-										p 59
-								.row
-									.col-xs-12
-										a(href="#1").btn.btn--block
-											i.icon-angle-down
-								
-						
+							#dailySummary.jackpot__block
+
 						//- Недельная игра
 						.col-md-4.col-xs-12
-							.jackpot__block.jackpot__block--color
-								h4 Недельная
-								p Джекпот
-								span 123,123
-									img(src="assets/img/jackpot.png", alt="ETH")
-								.jackpot__block__maney
-									p US $123,456
-								.jackpot__block__timer
-									p Успей принять участие
-									.jackpot__block__timer_clock2
-										p 10
-										span :
-										p 20
-										span :
-										p 12
-								.row
-									.col-xs-12
-										a(href="#2").btn.btn--block
-											i.icon-angle-down
-						
+							#weeklySummary.jackpot__block.jackpot__block--color
+
 						//- Бонусная игра
 						.col-md-4.col-xs-12
-							.jackpot__block.jackpot__block--color2
-								h4 Бонусная
-								p Джекпот
-								span 123,123
-									img(src="assets/img/jackpot.png", alt="ETH")
-								.jackpot__block__maney
-									p US $450,700
-								.jackpot__block__timer
-									p Успей принять участие
-									.jackpot__block__timer_clock3
-										p 05
-										span :
-										p 56
-										span :
-										p 59
-								.row
-									.col-xs-12
-										a(href="#3").btn.btn--block
-											i.icon-angle-down
+							#bonusSummary.jackpot__block.jackpot__block--color2
 		
-		section.lottery#1
+		section#dailyGame.lottery
 			.container
 				.row
 					.col-md-5.col-xs-12
@@ -236,56 +181,14 @@ body
 							.row.center-xs
 								.col-md-4.col-xs-12
 									.lottery__past__content
-										p Розыгрыш от: <span>31.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+										
 								.col-md-4.col-xs-12
 									.lottery__past__content
-										p Розыгрыш от: <span>30.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+										
 								.col-md-4.col-xs-12
-									.lottery__past__content.lottery__past__content--border
-										p Розыгрыш от: <span>29.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
-		section.lottery.lottery--none#2
+									.lottery__past__content
+									
+		section#weeklyGame.lottery.lottery--none
 			.container
 				.row
 					.col-xs-5
@@ -332,56 +235,14 @@ body
 							.row.center-xs
 								.col-xs-4
 									.lottery__past__content
-										p Розыгрыш от: <span>31.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+									
 								.col-xs-4
 									.lottery__past__content
-										p Розыгрыш от: <span>30.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+										
 								.col-xs-4
-									.lottery__past__content.lottery__past__content--border
-										p Розыгрыш от: <span>29.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
-		section.lottery.lottery--none#3
+									.lottery__past__content
+										
+		section#bonusGame.lottery.lottery--none
 			.container
 				.row
 					.col-xs-5
@@ -412,57 +273,15 @@ body
 							.row.center-xs
 								.col-xs-4
 									.lottery__past__content
-										p Розыгрыш от: <span>31.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+										
 								.col-xs-4
 									.lottery__past__content
-										p Розыгрыш от: <span>30.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+										
 								.col-xs-4
-									.lottery__past__content.lottery__past__content--border
-										p Розыгрыш от: <span>29.08.17</span>
-										.lottery__past__content__block
-											.row
-												.col-xs-4
-													p Джекпот 
-													span 69,995
-														p eth
-												.col-xs-4
-													p Участников 
-													span 10.753
-												.col-xs-4
-													p Победителей 
-													span 500
-												.col-xs-12.center-xs
-													a(href="#").btn.lottery__past__content__block--btn Cписок победителей
+									.lottery__past__content
+										
 		section.subs
-			.conteiner
+			.container
 				.col-md-offset-3.col-md-6.col-xs-12.center-xs
 					img(src="/img/subs1.png", alt="")
 					h2 <span>for</span> Tokenholder’s
@@ -485,7 +304,7 @@ body
 						.col-md-4.col-xs-12
 							.work__block.work__block--margin
 								.work__block__img
-								p Покупает билет
+								p Покупаетe билет
 						.col-xs-4
 							.work__block.work__block--margin.work__block--none
 								.work__block__img
@@ -635,4 +454,6 @@ body
 		script(src="/assets/js/flipcounter.min.js")
 		script(src="/assets/js/jquery.time-to.js")
 		script(src='https://www.google.com/recaptcha/api.js')
-		script(src="/assets/js/main.js")
+		script(src="/assets/js/vendor/jsrender.js")
+		script(src="/assets/js/templates.js")
+		script(src="/assets/js/main.js" defer)

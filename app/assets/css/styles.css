@@ -1970,6 +1970,8 @@ figcaption
 
     color: #fdcb8b;
 }
+.lottery__rally__timer p, /* Not added to SASS yet */
+.lottery__rally__timer span, /* Not added to SASS yet */
 .lottery__rally__timer1 p,
 .lottery__rally__timer1 span,
 .lottery__rally .lottery__rally__timer2 p,
@@ -2010,9 +2012,9 @@ figcaption
 .lottery__rally .lottery__rally__timer3 .second
 {
     font-size: 15px;
-
     color: #9a8ada;
 }
+.lottery__rally__timer, /* Not added to SASS yet */
 .lottery__rally__timer1--color,
 .lottery__rally .lottery__rally__timer2--color,
 .lottery__rally .lottery__rally__timer3--color
@@ -2020,18 +2022,19 @@ figcaption
     margin-left: -15px; 
     padding-bottom: 60px;
 }
+.lottery__rally__timer span, /* Not added to SASS yet */
 .lottery__rally__timer1--color span,
 .lottery__rally .lottery__rally__timer2--color span,
 .lottery__rally .lottery__rally__timer3--color span
 {
     font-size: 62px;
 }
+.lottery__rally__timer p, /* Not added to SASS yet */
 .lottery__rally__timer1--color p,
 .lottery__rally .lottery__rally__timer2--color p,
 .lottery__rally .lottery__rally__timer3--color p
 {
     font-size: 20px; 
-
     color: #fdcb8b;
 }
 .lottery__rally__timer1--btn,
@@ -2155,10 +2158,6 @@ figcaption
         border-bottom: 2px solid #1b1b1c;
     }
 }
-.lottery__past__content--border
-{
-    border: none;
-}
 .lottery__past__content p
 {
     position: relative;
@@ -2255,6 +2254,10 @@ figcaption
 
         margin-bottom: 20px;
     }
+}
+.lottery .lottery__past .col-md-4.col-xs-12:last-child .lottery__past__content
+{
+    border: none;
 }
 
 .subs
@@ -2578,4 +2581,21 @@ figcaption
     {
         margin-left: -18px;
     }
+}
+
+/* Not added to SASS yet */
+#weeklyGame .lottery__rally {
+    background-image: url("../img/lattery--block1.png");
+}
+#bonusGame .lottery__rally {
+    background-image: url("../img/lattery--block2.png");
+}
+
+.flip-counter-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.flip-counter {
+    height: 100%;
+    left: 0 !important;
 }
