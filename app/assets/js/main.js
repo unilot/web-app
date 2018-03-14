@@ -148,11 +148,14 @@ $(function () {
           console.log(`Received daily game #${game.id}`);            
           // render game summary
           game["type_name"] = "Дневная";
-          game["details_anchor"] = "#dailyGame";
+          game["details_anchor"] = "dailyGame";
           game["flip_counter_id"] = "flip-counter";
+          game["modal_id"] = "dailyParticipate";
           $("#dailySummary").html($.render.gameSummary(game));
           // render game details
           $("#dailyGame").html($.render.gameDetails(game));
+          // render game modal
+          $("#dailyModal").html($.render.gameModal(game));
           // initialize flip counters
           var myCounter = new flipCounter('flip-counter', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
           // mark game as rendered
@@ -163,11 +166,14 @@ $(function () {
           console.log(`Received weekly game #${game.id}`);
           // render game summary
           game["type_name"] = "Недельная";
-          game["details_anchor"] = "#weeklyGame";
+          game["details_anchor"] = "weeklyGame";
           game["flip_counter_id"] = "flip-counter1";
+          game["modal_id"] = "weeklyParticipate";
           $("#weeklySummary").html($.render.gameSummary(game));
           // render game details
           $("#weeklyGame").html($.render.gameDetails(game));
+          // render game modal
+          $("#weeklyModal").html($.render.gameModal(game));
           // initialize flip counters
           var myCounter = new flipCounter('flip-counter1', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
           // mark game as rendered
@@ -178,7 +184,7 @@ $(function () {
           console.log(`Received bonus game #${game.id}`);
           // render game summary
           game["type_name"] = "Бонусная";
-          game["details_anchor"] = "#bonusGame"; 
+          game["details_anchor"] = "bonusGame"; 
           game["flip_counter_id"] = "flip-counter2";
           $("#bonusSummary").html($.render.gameSummary(game));
           // render game details

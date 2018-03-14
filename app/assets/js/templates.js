@@ -18,7 +18,7 @@ $.templates('gameSummary', `
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <a class="btn btn--block" href="{{:details_anchor}}">
+      <a class="btn btn--block" href="#{{:details_anchor}}">
         <i class="icon-angle-down"></i>
       </a>
     </div>
@@ -89,7 +89,7 @@ $.templates('gameDetails', `
               </div>
               {{if type!=50}}
                 <div class="col-md-10 col-sm-11 col-xs-12 center-xs">
-                  <a class="btn lottery__rally__timer1--btn" href="#">
+                  <a class="btn lottery__rally__timer1--btn" href="#" data-toggle="modal" data-target="#{{:modal_id}}">
                     <p>Принять участие</p>
                     <span class="flex end-xs">{{:bet_amount.amount}} {{:bet_amount.currency}}</span>
                   </a>
@@ -100,29 +100,43 @@ $.templates('gameDetails', `
         </div>
       </div>
     </div>
-    <!--
-      <div class="col-xs-12">
-        <div class="heading">
-          <h4>Прошедшие лотереи</h4>
-        </div>
-        <div class="lottery__past">
-          <div class="row center-xs">
-            <div class="col-md-4 col-xs-12">
-              <div class="lottery__past__content"></div>
-            </div>
-            <div class="col-md-4 col-xs-12">
-              <div class="lottery__past__content"></div>
-            </div>
-            <div class="col-md-4 col-xs-12">
-              <div class="lottery__past__content"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    -->
   </div>
 </div>
 {{/if}}
+`);
+
+$.templates('gameModal', `
+<div class="modal fade" id="{{:modal_id}}" tabindex="-1" role="dialog" aria-labelledby="{{:details_anchor}}ModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="{{:details_anchor}}ModalLabel">{{:type_name}} лотерея</h4>
+      </div>
+      <div class="modal-body">
+        <p>Лотерея закончится через:</p>
+        <p>16:14:27</p>
+
+        <h5>Как принять участие</h5>
+        <ol>
+          <li>Скопируйте указанный ниже адрес кошелька Unilot</li>
+          <li>Перейдите в приложение, откуда вы управляете своим кошельком</li>
+          <li>
+            Отправьте {{:bet_amount.amount}} {{:bet_amount.currency}} на скопированный ранее адрес со следующими параметрами:
+            <ul>
+              <li>Gas Limit - 90000</li>
+              <li>Gas Price - 2 Gwei</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</div>
 `);
 
 $.templates('pastGame', `
