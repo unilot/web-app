@@ -1,31 +1,35 @@
 $.templates('gameSummary', `
-<h4>{{:type_name}}</h4>
-<p>Джекпот</p>
-<span>
-  {{:prize_amount.amount}}
-  <img src="assets/img/jackpot.png" alt="ETH">
-</span>
-<div class="jackpot__block__maney">
-  <p>US \${{:prize_amount_fiat}}</p>
-</div>
-<div class="jackpot__block__timer">
-  <p>Успей принять участие</p>
-  <div class="jackpot__block__timer_clock1">
-    <p>10</p><span>:</span>
-    <p>20</p><span>:</span>
-    <p>59</p>
+{{if}}
+  <p>Джекпот</p>
+  <span>
+    {{:prize_amount.amount}}
+    <img src="assets/img/jackpot.png" alt="ETH">
+  </span>
+  <div class="jackpot__block__maney">
+    <p>US \${{:prize_amount_fiat}}</p>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <a class="btn btn--block" href="{{:details_anchor}}">
-      <i class="icon-angle-down"></i>
-    </a>
+  <div class="jackpot__block__timer">
+    <p>Успей принять участие</p>
+    <div class="jackpot__block__timer_clock1">
+      <p>10</p><span>:</span>
+      <p>20</p><span>:</span>
+      <p>59</p>
+    </div>
   </div>
-</div>
+  <div class="row">
+    <div class="col-xs-12">
+      <a class="btn btn--block" href="{{:details_anchor}}">
+        <i class="icon-angle-down"></i>
+      </a>
+    </div>
+  </div>
+{{else}}
+  <p class="no-game-text">Игры пока нет</p>
+{{/if}}
 `);
 
 $.templates('gameDetails', `
+{{if}}
 <div class="container">
   <div class="row">
     <div class="col-md-5 col-xs-12">
@@ -59,10 +63,27 @@ $.templates('gameDetails', `
                 <p>До следующего розыгрыша:</p>
               </div>
               <div class="col-md-6 col-sm-7 col-xs-12 end-sm center-xs">
-                <div class="lottery__rally__timer">
+                <div class="lottery__rally__timer lottery__rally__timer{{if type==10}}1{{else type==30}}2{{else type==50}}3 lottery__rally__timer3--color{{/if}} ">
                   {{if type==50}}
                     <span>29</span>
                     <p>Дней</p>
+                  {{else}}
+                    <div class="row end-sm center-xs">
+                      <div class="col-xs-3">
+                        <p class="timer_hour">03</p>
+                        <div class="hour">Часа</div>
+                      </div>
+                      <div class="col-xs-1"><span>:</span></div>
+                      <div class="col-xs-3">
+                        <p class="timer_minute">45</p>
+                        <div class="minute">Минут</div>
+                      </div>
+                      <div class="col-xs-1"><span>:</span></div>
+                      <div class="col-xs-3">
+                        <p class="timer_second">59</p>
+                        <div class="second">Секунд</div>
+                      </div>
+                    </div>
                   {{/if}}
                 </div>
               </div>
@@ -79,26 +100,29 @@ $.templates('gameDetails', `
         </div>
       </div>
     </div>
-    <div class="col-xs-12">
-      <div class="heading">
-        <h4>Прошедшие лотереи</h4>
-      </div>
-      <div class="lottery__past">
-        <div class="row center-xs">
-          <div class="col-md-4 col-xs-12">
-            <div class="lottery__past__content"></div>
-          </div>
-          <div class="col-md-4 col-xs-12">
-            <div class="lottery__past__content"></div>
-          </div>
-          <div class="col-md-4 col-xs-12">
-            <div class="lottery__past__content"></div>
+    <!--
+      <div class="col-xs-12">
+        <div class="heading">
+          <h4>Прошедшие лотереи</h4>
+        </div>
+        <div class="lottery__past">
+          <div class="row center-xs">
+            <div class="col-md-4 col-xs-12">
+              <div class="lottery__past__content"></div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+              <div class="lottery__past__content"></div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+              <div class="lottery__past__content"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    -->
   </div>
 </div>
+{{/if}}
 `);
 
 $.templates('pastGame', `

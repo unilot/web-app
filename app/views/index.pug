@@ -121,164 +121,30 @@ body
 						
 						//- Дневная игра
 						.col-md-4.col-xs-12
-							#dailySummary.jackpot__block
+							.jackpot__block
+								h4 Дневная
+								#dailySummary.game-summary
+									div.lds-dual-ring
 
 						//- Недельная игра
 						.col-md-4.col-xs-12
-							#weeklySummary.jackpot__block.jackpot__block--color
+							.jackpot__block.jackpot__block--color
+								h4 Недельная
+								#weeklySummary.game-summary
+									div.lds-dual-ring
 
 						//- Бонусная игра
 						.col-md-4.col-xs-12
-							#bonusSummary.jackpot__block.jackpot__block--color2
+							.jackpot__block.jackpot__block--color2
+								h4 Бонусная
+								#bonusSummary.game-summary
+									div.lds-dual-ring
 		
 		section#dailyGame.lottery
-			.container
-				.row
-					.col-md-5.col-xs-12
-						.row
-							.col-md-12.col-xs-6
-								.heading
-									h2 Дневная лотерея
-							.col-md-12.col-sm-8.col-xs-12
-								p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
-					.col-md-7.col-xs-12.start-md.center-xs
-						.lottery__rally
-							.row
-								.col-sm-offset-2.col-sm-9.col-xs-12.col-md-10
-									.row
-										.col-md-10.end-xs.col-xs-12
-											h3 Текущий розыгрыш
-										.col-md-offset-1.col-md-9.end-xs.col-sm-10.col-sm-offset-2.col-xs-12
-											#flip-counter.flip-counter
-										.col-xs-12.end-xs
-											b US $ 3 787,50
-										.col-md-4.col-sm-5.col-xs-12.end-sm.center-xs
-											p До следующего розыгрыша:
-										.col-md-6.col-sm-7.col-xs-12.end-sm.center-xs
-											.lottery__rally__timer1
-												//- .row.end-sm.center-xs
-												//- 	.col-xs-3
-												//- 		p.timer_hour 03
-												//- 		.hour Часа
-												//- 	.col-xs-1
-												//- 		span :
-												//- 	.col-xs-3
-												//- 		p.timer_minute 45
-												//- 		.minute Минут
-												//- 	.col-xs-1
-												//- 		span :
-												//- 	.col-xs-3
-												//- 		p.timer_second 59
-												//- 		.second Секунд
-										.col-md-10.col-sm-11.col-xs-12.center-xs
-											a(href="#").btn.lottery__rally__timer1--btn
-												p Принять участие
-												span.flex.end-xs 0,01 Eth
-					.col-xs-12
-						.heading
-							h4 Прошедшие лотереи
-						.lottery__past
-							.row.center-xs
-								.col-md-4.col-xs-12
-									.lottery__past__content
-										
-								.col-md-4.col-xs-12
-									.lottery__past__content
-										
-								.col-md-4.col-xs-12
-									.lottery__past__content
 									
-		section#weeklyGame.lottery.lottery--none
-			.container
-				.row
-					.col-xs-5
-						.heading
-							h2 Недельная лотерея
-						p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
-					.col-xs-7
-						.lottery__rally.lottery__rally--bg1
-							.row.bottom-xs
-								.col-xs-offset-2.col-xs-10
-									.row
-										.col-xs-10.end-xs
-											h3 Текущий розыгрыш
-										.col-xs-offset-1.col-xs-9.end-xs
-											#flip-counter1.flip-counter
-										.col-xs-12.end-xs
-											b US $ 3 787,50
-										.col-xs-4.end-xs
-											p До следующего розыгрыша:
-										.col-md-6.col-sm-7.col-xs-12.end-sm.center-xs
-											.lottery__rally__timer2
-												.row.end-sm.center-xs
-													.col-xs-3
-														p 03
-														.hour Часа
-													.col-xs-1
-														span :
-													.col-xs-3
-														p 45
-														.minute Минут
-													.col-xs-1
-														span :
-													.col-xs-3
-														p 59
-														.second Секунд
-									.col-md-10.col-sm-11.col-xs-12.center-xs
-										a(href="#").btn.lottery__rally__timer2--btn
-											p Принять участие
-											span.flex.end-xs 0,01 Eth
-					.col-xs-12
-						.heading
-							h4 Прошедшие лотереи
-						.lottery__past
-							.row.center-xs
-								.col-xs-4
-									.lottery__past__content
-									
-								.col-xs-4
-									.lottery__past__content
+		section#weeklyGame.lottery
 										
-								.col-xs-4
-									.lottery__past__content
-										
-		section#bonusGame.lottery.lottery--none
-			.container
-				.row
-					.col-xs-5
-						.heading
-							h2 Бонусная лотерея
-						p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
-					.col-xs-7
-						.lottery__rally.lottery__rally--bg2
-							.row.bottom-xs
-								.col-xs-offset-2.col-xs-10
-									.row
-										.col-xs-10.end-xs
-											h3 Текущий розыгрыш
-										.col-xs-offset-1.col-xs-9.end-xs
-											#flip-counter2.flip-counter
-										.col-xs-12.end-xs
-											b US $ 3 787,50
-										.col-xs-7.end-xs
-											p.padding До следующего<br> розыгрыша:
-										.col-xs-5
-											.lottery__rally__timer3.lottery__rally__timer3--color
-												span 29
-												p Дней
-					.col-xs-12
-						.heading
-							h4 Прошедшие лотереи
-						.lottery__past
-							.row.center-xs
-								.col-xs-4
-									.lottery__past__content
-										
-								.col-xs-4
-									.lottery__past__content
-										
-								.col-xs-4
-									.lottery__past__content
+		section#bonusGame.lottery
 										
 		section.subs
 			.container

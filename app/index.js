@@ -1,6 +1,7 @@
 // Requires
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const popsicle = require('popsicle');
 const fs = require('fs');
 
@@ -48,8 +49,14 @@ function getAuthToken(config) {
   });
 }
 
+// Working with CORS
+var corsOptions = {
+  origin: 'https://dev.unilot.io',  //TODO: move to config
+  optionsSuccessStatus: 200
+}
+
 // Routes
-app.get('/', (request, response) => {
+app.get('/', cors(corsOptions), (request, response) => {
   response.render('index')
 });
 

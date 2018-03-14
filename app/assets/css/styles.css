@@ -1970,8 +1970,6 @@ figcaption
 
     color: #fdcb8b;
 }
-.lottery__rally__timer p, /* Not added to SASS yet */
-.lottery__rally__timer span, /* Not added to SASS yet */
 .lottery__rally__timer1 p,
 .lottery__rally__timer1 span,
 .lottery__rally .lottery__rally__timer2 p,
@@ -2014,7 +2012,6 @@ figcaption
     font-size: 15px;
     color: #9a8ada;
 }
-.lottery__rally__timer, /* Not added to SASS yet */
 .lottery__rally__timer1--color,
 .lottery__rally .lottery__rally__timer2--color,
 .lottery__rally .lottery__rally__timer3--color
@@ -2022,14 +2019,12 @@ figcaption
     margin-left: -15px; 
     padding-bottom: 60px;
 }
-.lottery__rally__timer span, /* Not added to SASS yet */
 .lottery__rally__timer1--color span,
 .lottery__rally .lottery__rally__timer2--color span,
 .lottery__rally .lottery__rally__timer3--color span
 {
     font-size: 62px;
 }
-.lottery__rally__timer p, /* Not added to SASS yet */
 .lottery__rally__timer1--color p,
 .lottery__rally .lottery__rally__timer2--color p,
 .lottery__rally .lottery__rally__timer3--color p
@@ -2591,6 +2586,11 @@ figcaption
     background-image: url("../img/lattery--block2.png");
 }
 
+.lottery__rally__timer span {
+    font-size: 2em;
+    line-height: 50px;
+}
+
 .flip-counter-container {
     display: flex;
     justify-content: flex-end;
@@ -2599,3 +2599,39 @@ figcaption
     height: 100%;
     left: 0 !important;
 }
+
+.game-summary {
+    min-height: 312.5px;
+}
+
+/* increase selector specificity by using class name twice */
+.game-summary .no-game-text.no-game-text {
+    padding: 120px 0;
+}
+
+/* Loader taken from https://loading.io/css/  */
+.lds-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin-top: 110px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.2);
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
