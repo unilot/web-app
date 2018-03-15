@@ -114,25 +114,27 @@ $.templates('gameModal', `
         <h4 class="modal-title" id="{{:details_anchor}}ModalLabel">{{:type_name}} лотерея</h4>
       </div>
       <div class="modal-body">
-        <p>Лотерея закончится через:</p>
-        <p>16:14:27</p>
+        <center>
+          <p>Лотерея закончится через:</p>
+          <p>16:14:27</p>
+        </center>
 
-        <h5>Как принять участие</h5>
-        <ol>
-          <li>Скопируйте указанный ниже адрес кошелька Unilot</li>
-          <li>Перейдите в приложение, откуда вы управляете своим кошельком</li>
-          <li>
-            Отправьте {{:bet_amount.amount}} {{:bet_amount.currency}} на скопированный ранее адрес со следующими параметрами:
-            <ul>
-              <li>Gas Limit - 90000</li>
-              <li>Gas Price - 2 Gwei</li>
-            </ul>
-          </li>
-        </ol>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить</button>
+        <div class="alert alert-warning" role="alert">
+          <h4>Как принять участие</h4>
+          <ol>
+            <li>Скопируйте указанный ниже адрес кошелька Unilot</li>
+            <li>Перейдите в приложение, откуда вы управляете своим кошельком</li>
+            <li>
+              Отправьте {{:bet_amount.amount}} {{:bet_amount.currency}} на скопированный ранее адрес со следующими параметрами:
+              <ul>
+                <li>Gas Limit - 90000</li>
+                <li>Gas Price - 2 Gwei</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <center>{{:smart_contract_id}}</center>
       </div>
     </div>
   </div>

@@ -13,7 +13,10 @@ html(lang="ru")
 		link(rel="stylesheet", href="/assets/css/styles.css")
 
 body
-	block content
+	#dailyModal
+	#weeklyModal
+
+	//- block content
 	#menu.slideout-menu.slideout-menu-right
 		.menu-close
 			span
@@ -140,9 +143,6 @@ body
 								h4 Бонусная
 								#bonusSummary.game-summary
 									div.lds-dual-ring
-		
-		#dailyModal
-		#weeklyModal
 
 		section#dailyGame.lottery
 		section#weeklyGame.lottery
@@ -323,6 +323,6 @@ body
 		script(src="/assets/js/vendor/jquery.time-to.js")
 		script(src='https://www.google.com/recaptcha/api.js')
 		script(src="/assets/js/vendor/jsrender.min.js")
-		script(src="/assets/js/vendor/bootstrap.min.js")
+		script(src="/assets/js/vendor/bootstrap.js")
 		script(src="/assets/js/templates.js")
 		script(src="/assets/js/main.js" defer)
