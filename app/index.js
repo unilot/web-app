@@ -2,23 +2,13 @@
 const config = require('../config');
 const express = require('express');
 const popsicle = require('popsicle');
-const fs = require('fs');
 const path = require('path');
 
 // Server setup
 const port = process.env.PORT || 3000;
 const app = express();
     
-// Functions for API auth
-function getClientConfig() {
-  return new Promise((resolve, reject) => {
-    fs.readFile('config.json', (error, config) => {
-      if(error) {reject(error)}
-      else {resolve(JSON.parse(config))}
-    })
-  })
-}
-
+// API authentication
 function getAuthToken(config) {
   return new Promise((resolve, reject) => {
     popsicle.request({
@@ -46,8 +36,7 @@ function getAuthToken(config) {
 }
 
 app.get('/token/', (request, response) => {
-  getClientConfig()
-    .then(getAuthToken)
+  getAuthToken(config)
     .then((result) => {response.send(result)})
     .catch((error) => {response.send(error)})  
 });

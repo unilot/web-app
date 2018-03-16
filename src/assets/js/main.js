@@ -139,86 +139,60 @@ $(function () {
   
   // Render templates based on game data
   function renderTemplates(games) {
+    var gamesContainerBlock = $('.js-games-container');
+    var gameSummariesBlock = $('.js-games-summaries');
+
+    var gameTemplate = $.templates('#gameTemplate');
+    var gameSummaryTemplate = $.templates('#gameSummaryTemplate');
+    
     // Iterate through games object
     var i = 0;
-    var rendered = {daily: false, weekly: false, bonus: false};
     do {
       var game = games[i];
+      gameSummariesBlock.append(gameSummaryTemplate.render(game));
+      gamesContainerBlock.append(gameTemplate.render(game));
+      // todo: render flip counter
       
-      switch(game.type) {
-        case 10:
-          console.log('Received daily game #' + game.id);
-          // render game summary
-          game["type_name"] = "Дневная";
-          game["details_anchor"] = "dailyGame";
-          game["flip_counter_id"] = "flip-counter";
-          game["modal_id"] = "dailyParticipate";
-          // $("#dailySummary").html($.render.gameSummary(game));
-          // render game details
-          // $("#dailyGame").html($.render.gameDetails(game));
-          // render game modal
-          // $("#dailyModal").html($.render.gameModal(game));
-          // initialize flip counters
-          var myCounter = new flipCounter('flip-counter', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
-          // mark game as rendered
-          rendered.daily = true;
-          break;
+      // remove
+      // switch(game.type) {
+      //   case 10:
+      //     game["details_anchor"] = "dailyGame";
+      //     game["flip_counter_id"] = "flip-counter";
+      //     game["modal_id"] = "dailyParticipate";
+      //     // render game details
+      //     // $("#dailyGame").html($.render.gameDetails(game));
+      //     // render game modal
+      //     // $("#dailyModal").html($.render.gameModal(game));
+      //     // initialize flip counters
+      //     var myCounter = new flipCounter('flip-counter', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
+      //     break;
 
-        case 30:
-          console.log('Received weekly game #' + game.id);
-          // render game summary
-          game["type_name"] = "Недельная";
-          game["details_anchor"] = "weeklyGame";
-          game["flip_counter_id"] = "flip-counter1";
-          game["modal_id"] = "weeklyParticipate";
-          $("#weeklySummary").html($.render.gameSummary(game));
-          // render game details
-          $("#weeklyGame").html($.render.gameDetails(game));
-          // render game modal
-          $("#weeklyModal").html($.render.gameModal(game));
-          // initialize flip counters
-          var myCounter = new flipCounter('flip-counter1', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
-          // mark game as rendered
-          rendered.weekly = true;
-          break
+      //   case 30:
+      //     game["details_anchor"] = "weeklyGame";
+      //     game["flip_counter_id"] = "flip-counter1";
+      //     game["modal_id"] = "weeklyParticipate";
+      //     // render game details
+      //     $("#weeklyGame").html($.render.gameDetails(game));
+      //     // render game modal
+      //     $("#weeklyModal").html($.render.gameModal(game));
+      //     // initialize flip counters
+      //     var myCounter = new flipCounter('flip-counter1', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
+      //     break
 
-        case 50:
-          console.log("Received bonus game #" + game.id);
-          // render game summary
-          game["type_name"] = "Бонусная";
-          game["details_anchor"] = "bonusGame"; 
-          game["flip_counter_id"] = "flip-counter2";
-          $("#bonusSummary").html($.render.gameSummary(game));
-          // render game details
-          $("#bonusGame").html($.render.gameDetails(game));
-          // initialize flip counters
-          // var myCounter = new flipCounter('flip-counter2', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
-          // mark game as rendered
-          rendered.bonus = true;
-          break;
+      //   case 50:
+      //     game["details_anchor"] = "bonusGame"; 
+      //     game["flip_counter_id"] = "flip-counter2";
+      //     // render game details
+      //     $("#bonusGame").html($.render.gameDetails(game));
+      //     // initialize flip counters
+      //     // var myCounter = new flipCounter('flip-counter2', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
+      //     break;
 
-        default:
-          throw new RangeError('Game type "' + game + '" is unknown.');
-      }
+      //   default:
+      //     throw new RangeError('Game type "' + game + '" is unknown.');
+      // }
       i += 1;
     } while(games[i]);
-
-    // Render stubs for absent games
-    if(!rendered.daily) {
-      $("#dailySummary").html($.render.gameSummary(null));
-      $("#dailyGame").html($.render.gameDetails(null));
-      rendered.daily = true;
-    }    
-    if(!rendered.weekly) {
-      $("#weeklySummary").html($.render.gameSummary(null));
-      $("#weeklyGame").html($.render.gameDetails(null));
-      rendered.weekly = true;
-    }
-    if(!rendered.bonus) {
-      $("#bonusSummary").html($.render.gameSummary(null));
-      $("#bonusGame").html($.render.gameDetails(null));
-      rendered.bonus = true;
-    }
     
     // Render past games (static for now)
     // $(".lottery__past__content").html($.render.pastGame());

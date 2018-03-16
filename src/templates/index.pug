@@ -115,38 +115,124 @@ body
                             p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
 
                 .jackpot
-                    .row.center-xs
-
-                        //- Дневная игра
+                    .js-games-summaries.row.center-xs
+                    script#gameSummaryTemplate(type="text/x-jsrender")
                         .col-md-4.col-xs-12
                             .jackpot__block
-                                h4 Дневная
-                                #dailySummary.game-summary
-                                    div.lds-dual-ring
+                                h4 {{if type==10}}Дневная
+                                    | {{else type==30}}Недельная
+                                    | {{else type==50}}Бонусная
+                                    | {{else}}Неизвестная{{/if}}
+                                .game-summary
+                                    p Джекпот
+                                    span {{:prize_amount.amount}}
+                                        img(src="assets/img/jackpot.png", alt="ETH")
+                                        //- rewrite to accept prize_amount.currency
+                                    .jackpot__block__maney
+                                        p US ${{:prize_amount_fiat}}
+                                    .jackpot__block__timer
+                                        p Успей принять участие
+                                        .jackpot__block__timer_clock1
+                                            p 10
+                                            span :
+                                            p 20
+                                            span :
+                                            p 59
+                                    .row
+                                        .col-xs-12
+                                            a.btn.btn--block(href="#")
+                                                i.icon-angle-down
+
+                        //- Дневная игра
+                        //- .col-md-4.col-xs-12
+                        //-     .jackpot__block
+                        //-         h4 Дневная
+                        //-         #dailySummary.game-summary
+                        //-             div.lds-dual-ring
 
                         //- Недельная игра
-                        .col-md-4.col-xs-12
-                            .jackpot__block.jackpot__block--color
-                                h4 Недельная
-                                #weeklySummary.game-summary
-                                    div.lds-dual-ring
+                        //- .col-md-4.col-xs-12
+                        //-     .jackpot__block.jackpot__block--color
+                        //-         h4 Недельная
+                        //-         #weeklySummary.game-summary
+                        //-             div.lds-dual-ring
 
-                        //- Бонусная игра
-                        .col-md-4.col-xs-12
-                            .jackpot__block.jackpot__block--color2
-                                h4 Бонусная
-                                #bonusSummary.game-summary
-                                    div.lds-dual-ring
+                        //- //- Бонусная игра
+                        //- .col-md-4.col-xs-12
+                        //-     .jackpot__block.jackpot__block--color2
+                        //-         h4 Бонусная
+                        //-         #bonusSummary.game-summary
+                        //-             div.lds-dual-ring
 
-        section#dailyGame.lottery
-        section#weeklyGame.lottery
-        section#bonusGame.lottery
+        section.js-games-container
+        script#gameTemplate(type="text/x-jsrender")
+            .lottery
+                .container
+                    .row
+                        .col-md-5.col-xs-12
+                            .row
+                                .col-md-12.col-xs-6
+                                    .heading
+                                        h2 {{if type==10}}Дневная
+                                            | {{else type==30}}Недельная
+                                            | {{else type==50}}Бонусная
+                                            | {{else}}Неизвестная{{/if}} лотерея
+                                .col-md-12.col-sm-8.col-xs-12
+                                    p Децентрализованная лотерея на базе Ethereum Smart Contracts, обеспечивающих полную прозрачность для всех участников розыгрышей
+                        .col-md-7.col-xs-12.start-md.center-xs
+                            .lottery__rally
+                                .row
+                                    .col-sm-offset-2.col-sm-9.col-xs-12.col-md-10
+                                        .row
+                                            .col-md-10.end-xs.col-xs-12
+                                                h3 Текущий розыгрыш
+                                            .flip-counter-container.col-md-offset-1.col-md-9.end-xs.col-sm-10.col-sm-offset-2.col-xs-12
+                                                //- attach id to element below
+                                                .flip-counter
+                                            .col-xs-12.end-xs
+                                                b US ${{:prize_amount_fiat}}
+                                            .col-md-4.col-sm-5.col-xs-12.end-sm.center-xs
+                                                p До следующего розыгрыша:
+                                            .col-md-6.col-sm-7.col-xs-12.end-sm.center-xs
+                                                //- add specific class to element below
+                                                .lottery__rally__timer
+                                                //- the following condition does not work in pug
+                                                //- {{if type==50}}
+                                                //-     span 29
+                                                //-     p Дней
+                                                //- {{else}}
+                                                .row.end-sm.center-xs 
+                                                    .col-xs-3 
+                                                        p.timer_hour 03
+                                                        .hour Часа
+                                                    .col-xs-1
+                                                        span :
+                                                    .col-xs-3 
+                                                        p.timer_minute 45
+                                                        .minute Минут
+                                                    .col-xs-1
+                                                        span :
+                                                    .col-xs-3 
+                                                        p.timer_second 59
+                                                        .second Секунд
+                                                //- {{/if}}
+                                            
+                                            //- {{if type!=50}}
+                                            .col-md-10.col-sm-11.col-xs-12.center-xs 
+                                            a.btn.lottery__rally__timer1--btn(href="#", data-toggle="modal", data-target="#{{:modal_id}}")
+                                                p Принять участие
+                                                span.flex.end-xs {{:bet_amount.amount}} {{:bet_amount.currency}}
+                                            //- {{/if}}
+
+            //- section#dailyGame.lottery
+            //- section#weeklyGame.lottery
+            //- section#bonusGame.lottery
 
         section.subs
             .container
                 .col-md-offset-3.col-md-6.col-xs-12.center-xs
                     img(src="/assets/img/subs1.png", alt="")
-                    h2 <span>for</span> Tokenholder’s
+                    h2 <span>for Tokenholder’s
                     p Станьте нашим токен-холдером и у вас появится возможность принять участие в отдельном розыгрыше большого джекпота, мы можем оповестить вас о начале ICO
                     form
                         input(type="email" name="e-mail" placeholder="Ваш email")
@@ -238,31 +324,31 @@ body
                                 i.icon-twitter
         script#gameSummaryTemplate(type='text/x-jsrender')
             = "{{if}}"
-            = '<p>Джекпот</p>'
+            = '<p>Джекпот'
             = '<span>'
             = "{{:prize_amount.amount}}"
-            = '<img src="assets/img/jackpot.png" alt="ETH">'
-            = '</span>'
-            = '<div class="jackpot__block__maney">'
-            = '<p>US ${{:prize_amount_fiat}}</p>'
-            = '</div>'
-            = '<div class="jackpot__block__timer">'
-            = '<p>Успей принять участие</p>'
-            = '<div class="jackpot__block__timer_clock1">'
-            = '<p>10</p><span>:</span>'
-            = '<p>20</p><span>:</span>'
-            = '<p>59</p>'
-            = '</div>'
-            = '</div>'
-            = '<div class="row">'
-            = '<div class="col-xs-12">'
-            ='<a class="btn btn--block" href="#{{:details_anchor}}">'
-            ='<i class="icon-angle-down"></i>'
+            = '<img src="assets/img/jackpot.png" alt="ETH '
+            = ''
+            = '.jackpot__block__maney '
+            = '<p>US ${{:prize_amount_fiat}}'
+            = ''
+            = '.jackpot__block__timer '
+            = '<p>Успей принять участие'
+            = '.jackpot__block__timer_clock1 '
+            = '<p>10<span>:'
+            = '<p>20<span>:'
+            = '<p>59'
+            = ''
+            = ''
+            = '.row '
+            = '.col-xs-12 '
+            ='a.btn btn--block" href="#{{:details_anchor}} '
+            ='<i class="icon-angle-down </i>'
             = '</a>'
-            = '</div>'
-            = '</div>'
+            = ''
+            = ''
             ="{{else}}"
-            = '<p class="no-game-text">Игры пока нет</p>'
+            = 'p.no-game-text Игры пока нет'
             ="{{/if}}"
 
 
