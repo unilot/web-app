@@ -59,3 +59,5 @@ typings/
 
 config.json
 app/assets/img
+/public/
+/src/assets/js/tmp/

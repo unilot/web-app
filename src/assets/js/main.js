@@ -60,14 +60,14 @@ $(function () {
   // ----------------------------------------------------------------
 
   // Таймер часовой
-  $('.jackpot__block__timer_clock1, .lottery__rally__timer1').timeTo(new Date('Wed Nov 22 2017 02:00:00 GMT+0200 (EET)'))
-  $('.jackpot__block__timer_clock2, .lottery__rally__timer2').timeTo(new Date('Wed Nov 22 2017 02:00:00 GMT+0200 (EET)'))
-  $('.jackpot__block__timer_clock3').timeTo(new Date('Wed Nov 22 2017 16:00:00 GMT+0200 (EET)'))
+  $('.jackpot__block__timer_clock1, .lottery__rally__timer1').timeTo(new Date('Wed Nov 22 2017 02:00:00 GMT+0200 (EET)'));
+  $('.jackpot__block__timer_clock2, .lottery__rally__timer2').timeTo(new Date('Wed Nov 22 2017 02:00:00 GMT+0200 (EET)'));
+  $('.jackpot__block__timer_clock3').timeTo(new Date('Wed Nov 22 2017 16:00:00 GMT+0200 (EET)'));
 
   // Таймер дневной
   var d = [5, 4, 3, 2, 1, 7, 6];
   var today = new Date();
-  var end = new Date(today.getFullYear(), today.getMonth(), today.getDate() + d[today.getDay()], 16, 00, 00);
+  var end = new Date(today.getFullYear(), today.getMonth(), today.getDate() + d[today.getDay()], 16, 0, 0);
   var _second = 1000;
   var _minute = _second * 60;
   var _hour = _minute * 60;
@@ -101,27 +101,29 @@ $(function () {
   var parallaxInstance = new Parallax(scene);
   // ----------------------------------------------------------------
 
+  var baseUrl = 'https://dev.unilot.io/api/v1';
+
   // Fetch game data from API
   function getToken() {
-    return new Promise((resolve, reject) => {
-      $.get("/token/", (token) => {resolve(token)})
-        .fail(() => {reject("failed")});
+    return new Promise(function(resolve, reject){
+      $.get("/token/", function(token){resolve(token)})
+        .fail(function(){reject("failed");});
     });
   }
 
   function getGames(token) {
-    return new Promise((resolve, reject) => {
+    return new Promise(function(resolve, reject){
       $.ajax({
-        url: "https://dev.unilot.io/api/v1/games/",
+        url: baseUrl + '/games/',
         method: "GET",
         // crossDomain: true,
         beforeSend: function(request) {
-          request.setRequestHeader("Authorization", `Bearer ${token}`)
+          request.setRequestHeader("Authorization", 'Bearer ' + token)
         },
-        success: (response) => {
+        success: function(response){
           resolve(response)
         },
-        error: (error) => {
+        error: function(error){
           console.log("Error", error);
           reject(error)
         }
@@ -145,25 +147,25 @@ $(function () {
       
       switch(game.type) {
         case 10:
-          console.log(`Received daily game #${game.id}`);            
+          console.log('Received daily game #' + game.id);
           // render game summary
           game["type_name"] = "Дневная";
           game["details_anchor"] = "dailyGame";
           game["flip_counter_id"] = "flip-counter";
           game["modal_id"] = "dailyParticipate";
-          $("#dailySummary").html($.render.gameSummary(game));
+          // $("#dailySummary").html($.render.gameSummary(game));
           // render game details
-          $("#dailyGame").html($.render.gameDetails(game));
+          // $("#dailyGame").html($.render.gameDetails(game));
           // render game modal
-          $("#dailyModal").html($.render.gameModal(game));
+          // $("#dailyModal").html($.render.gameModal(game));
           // initialize flip counters
           var myCounter = new flipCounter('flip-counter', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
           // mark game as rendered
           rendered.daily = true;
-          break
+          break;
 
         case 30:
-          console.log(`Received weekly game #${game.id}`);
+          console.log('Received weekly game #' + game.id);
           // render game summary
           game["type_name"] = "Недельная";
           game["details_anchor"] = "weeklyGame";
@@ -181,7 +183,7 @@ $(function () {
           break
 
         case 50:
-          console.log(`Received bonus game #${game.id}`);
+          console.log("Received bonus game #" + game.id);
           // render game summary
           game["type_name"] = "Бонусная";
           game["details_anchor"] = "bonusGame"; 
@@ -190,13 +192,13 @@ $(function () {
           // render game details
           $("#bonusGame").html($.render.gameDetails(game));
           // initialize flip counters
-          var myCounter = new flipCounter('flip-counter2', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
+          // var myCounter = new flipCounter('flip-counter2', { value: game.prize_amount.amount, inc: 0, pace: 1000, auto: true });
           // mark game as rendered
           rendered.bonus = true;
-          break
+          break;
 
         default:
-          throw new RangeError(`Game type "${game}" is unknown`)
+          throw new RangeError('Game type "' + game + '" is unknown.');
       }
       i += 1;
     } while(games[i]);
