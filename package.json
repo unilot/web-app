@@ -28,6 +28,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.3.1",
+    "jquery-countdown": "^2.2.0",
     "jsrender": "^0.9.90",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
@@ -36,8 +37,7 @@
     "parallax-js": "^3.1.0",
     "popsicle": "^9.2.0",
     "pug": "^2.0.0-rc.4",
-    "slideout": "^1.0.1",
-    "time-to": "^1.1.2"
+    "slideout": "^1.0.1"
   },
   "devDependencies": {
     "gulp-browserify": "^0.5.1",

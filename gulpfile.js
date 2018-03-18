@@ -22,14 +22,17 @@ const htmlSrc = [
 ];
 
 const jsSrc = [
-    `${assetsDir}/js/fix.js`,
     `${nodeModules}/jquery/dist/jquery.min.js`,
     `${nodeModules}/parallax-js/dist/parallax.min.js`,
     `${nodeModules}/slideout/dist/slideout.min.js`,
+    `${nodeModules}/moment/min/moment.min.js`,
+    `${nodeModules}/moment-timezone/builds/moment-timezone-with-data.min.js`,
+    `${nodeModules}/jquery-countdown/dist/jquery.countdown.js`,
+    `${assetsDir}/js/fix.js`,
     `${nodeModules}/flip-counter/js/flipcounter.js`,
-    `${nodeModules}/time-to/jquery.time-to.min.js`,
     `${nodeModules}/jsrender/jsrender.min.js`,
     `${nodeModules}/bootstrap/dist/bootstrap.min.js`,
+    `${assetsDir}/js/games.js`,
     `${assetsDir}/js/main.js`,
 ];
 
@@ -46,7 +49,7 @@ const sassSrc = [
 
 const fontsSrc = [
     // nodeModules + '/bootstrap/dist/fonts/*',
-    `${srcDir}/fonts/*`
+    `${assetsDir}/fonts/*`
 ];
 
 const imgSrc = [
@@ -106,7 +109,9 @@ gulp.task('fonts', () => {
 
 gulp.task('images', () => {
     return gulp.src(imgSrc)
-        .pipe(imagemin())
+        .pipe(imagemin({
+            progressive: true
+        }))
         .pipe(gulp.dest(`${distDir}/assets/img/`))
 });
 
