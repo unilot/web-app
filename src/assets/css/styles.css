@@ -2032,7 +2032,7 @@ figcaption
     font-size: 20px; 
     color: #fdcb8b;
 }
-.lottery__rally__timer1--btn,
+.lottery__rally .lottery__rally__timer1--btn,
 .lottery__rally .lottery__rally__timer2--btn,
 .lottery__rally .lottery__rally__timer3--btn
 {
@@ -2041,6 +2041,7 @@ figcaption
     margin-bottom: 30px;
     margin-left: 30px;
     padding: 20px 0;
+    box-shadow: none; /* not added to SASS yet */
 }
 @media (max-width: 767px)
 {
@@ -2062,11 +2063,8 @@ figcaption
 .lottery__rally .lottery__rally__timer3--btn span
 {
     font-size: 20px;
-
     display: inline-block;
-
     padding-top: 0;
-
     color: #fff;
 }
 @media (max-width: 400px)

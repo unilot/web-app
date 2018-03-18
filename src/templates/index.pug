@@ -122,7 +122,7 @@ body
             .container
                 .col-md-offset-3.col-md-6.col-xs-12.center-xs
                     img(src="/assets/img/subs1.png", alt="")
-                    h2 <span>for Tokenholder’s
+                    h2 <span>for Tokenholders
                     p Станьте нашим токен-холдером и у вас появится возможность принять участие в отдельном розыгрыше большого джекпота, мы можем оповестить вас о начале ICO
                     form
                         input(type="email" name="e-mail" placeholder="Ваш email")
@@ -256,22 +256,20 @@ body
                                         .col-md-10.end-xs.col-xs-12
                                             h3 Текущий розыгрыш
                                         .flip-counter-container.col-md-offset-1.col-md-9.end-xs.col-sm-10.col-sm-offset-2.col-xs-12
-                                            //- attach id to element below
                                             .flip-counter
                                         .col-xs-12.end-xs
                                             b US ${{:prize_amount_fiat}}
                                         .col-md-4.col-sm-5.col-xs-12.end-sm.center-xs
                                             p До следующего розыгрыша:
                                         .col-md-6.col-sm-7.col-xs-12.end-sm.center-xs
-                                            //- add specific class to element below
                                             .lottery__rally__timer
                                         ="{{if canParticipate}}"
                                         .col-md-10.col-sm-11.col-xs-12.center-xs
-                                        a.btn.lottery__rally__timer1--btn.modal(href="#", data-toggle="modal", data-target="#{{:modal_id}}")
-                                            p Принять участие
-                                            span.flex.end-xs {{:bet_amount.amount}} {{:bet_amount.currency}}
+                                            a.btn.lottery__rally__timer1--btn.modal(href="#", data-toggle="modal", data-target="#{{:modal_id}}")
+                                                p Принять участие
+                                                span.flex.end-xs {{:bet_amount.amount}} {{:bet_amount.currency}}
                                         ="{{/if}}"
-    script#daylyTimerTemplate(type="text/x-jsrender")
+    script#dailyTimerTemplate(type="text/x-jsrender")
         span %D
         p Дней
     script#hourlyTimerTemplate(type="text/x-jsrender")

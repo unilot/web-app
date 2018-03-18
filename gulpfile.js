@@ -42,7 +42,7 @@ const cssSrc = [
     `${assetsDir}/css/counter.css`,
     `${assetsDir}/css/sass/sass.css`,
     // `${assetsDir}/css/fonts.css`,
-    // `${assetsDir}/css/styles.css`,
+    `${assetsDir}/css/styles.css`,
 ];
 
 const sassSrc = [
@@ -130,10 +130,8 @@ gulp.task('watch', function(){
 
 gulp.task('webserver', () => {
     webserver.run([webServerAppBootstrap]);
-
-
 });
 
-gulp.task('dev', ['html', 'js:dev', 'css:dev', 'fonts', 'webserver', 'watch']);
+gulp.task('dev', ['html', 'js:dev', 'css:dev', 'fonts', 'images', 'webserver', 'watch']);
 gulp.task('build:dev', ['html', 'js:dev', 'css:dev', 'fonts', 'images']);
 gulp.task('build:prod', ['html', '  js:prod', 'css:prod', 'fonts', 'images']);

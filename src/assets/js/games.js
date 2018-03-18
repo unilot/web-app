@@ -6,7 +6,7 @@ var gameTemplate = $.templates('#gameTemplate');
 var gameSummaryTemplate = $.templates('#gameSummaryTemplate');
 
 const gameType = {
-    DAYLY: 10,
+    DAILY: 10,
     WEEKLY: 30,
     BONUS: 50,
     TOKEN: 70
@@ -15,8 +15,8 @@ const gameType = {
 const getGameTypeName = function (type) {
     result = '';
 
-    if (type === gameType.DAYLY) {
-        result = 'dayly';
+    if (type === gameType.DAILY) {
+        result = 'daily';
     } else if (type === gameType.WEEKLY) {
         result = 'weekly';
     } else if (type === gameType.BONUS) {
@@ -47,7 +47,6 @@ function getGames(token) {
         $.ajax({
             url: baseUrl + '/games/',
             method: "GET",
-            // crossDomain: true,
             beforeSend: function (request) {
                 request.setRequestHeader("Authorization", 'Bearer ' + token)
             },
@@ -90,9 +89,9 @@ function renderGame(gameData) {
     var timeTemplate = $.templates('#hourlyTimerTemplate');
     var $flipCounterContainer = $('.flip-counter', result.$container);
 
-    //Choosing template to render. Setting dayly if more than 24 hours left till the end of game
+    //Choosing template to render. Setting daily if more than 24 hours left till the end of game
     if ( gameEndTime.diff(now, 'hours') > 24 ) {
-        timeTemplate = $.templates('#daylyTimerTemplate');
+        timeTemplate = $.templates('#dailyTimerTemplate');
     }
 
     //Setting up counters
@@ -128,7 +127,7 @@ function renderGame(gameData) {
 function renderTemplates(gamesData) {
 
     var typeMap = {};
-    var renderOrder = [gameType.DAYLY, gameType.WEEKLY, gameType.BONUS, gameType.TOKEN];
+    var renderOrder = [gameType.DAILY, gameType.WEEKLY, gameType.BONUS, gameType.TOKEN];
 
     // Iterate through games object
     for (var i in gamesData) {
