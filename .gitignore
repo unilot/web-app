@@ -61,3 +61,4 @@ config.json
 app/assets/img
 /public/
 /src/assets/js/tmp/
+/src/assets/css/sass/sass.css

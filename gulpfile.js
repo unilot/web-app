@@ -23,6 +23,7 @@ const htmlSrc = [
 
 const jsSrc = [
     `${nodeModules}/jquery/dist/jquery.min.js`,
+    `${nodeModules}/bootstrap/dist/js/bootstrap.min.js`,
     `${nodeModules}/parallax-js/dist/parallax.min.js`,
     `${nodeModules}/slideout/dist/slideout.min.js`,
     `${nodeModules}/moment/min/moment.min.js`,
@@ -31,7 +32,6 @@ const jsSrc = [
     `${assetsDir}/js/fix.js`,
     `${nodeModules}/flip-counter/js/flipcounter.js`,
     `${nodeModules}/jsrender/jsrender.min.js`,
-    `${nodeModules}/bootstrap/dist/bootstrap.min.js`,
     `${assetsDir}/js/games.js`,
     `${assetsDir}/js/main.js`,
 ];
@@ -40,11 +40,15 @@ const cssSrc = [
     `${nodeModules}/normalize.css/normalize.css`,
     `${nodeModules}/flexboxgrid/dist/flexboxgrid.min.css`,
     `${assetsDir}/css/counter.css`,
-    `${assetsDir}/css/fonts.css`,
-    `${assetsDir}/css/styles.css`,
+    `${assetsDir}/css/sass/sass.css`,
+    // `${assetsDir}/css/fonts.css`,
+    // `${assetsDir}/css/styles.css`,
 ];
 
 const sassSrc = [
+    `${assetsDir}/sass/import/*.sass`,
+    `${assetsDir}/sass/fonts.sass`,
+    `${assetsDir}/sass/styles.sass`,
 ];
 
 const fontsSrc = [
@@ -130,6 +134,6 @@ gulp.task('webserver', () => {
 
 });
 
-gulp.task('dev', ['html', 'js:dev', 'css:dev', 'fonts', 'images', 'webserver', 'watch']);
+gulp.task('dev', ['html', 'js:dev', 'css:dev', 'fonts', 'webserver', 'watch']);
 gulp.task('build:dev', ['html', 'js:dev', 'css:dev', 'fonts', 'images']);
 gulp.task('build:prod', ['html', '  js:prod', 'css:prod', 'fonts', 'images']);

@@ -1609,33 +1609,33 @@ figcaption
     padding-right: 0;
     padding-left: 0;
 }
-.hat .jackpot__block--color
+.hat .weekly .jackpot__block
 {
     background: #4d2ce0;
     background: linear-gradient(to top, #4d2ce0, #8453f7);
 }
-.hat .jackpot__block--color .btn--block
+.hat .weekly .jackpot__block .btn--block
 {
     border: 2px solid #8453f7 !important;
 }
-.hat .jackpot__block--color .btn--block:hover
+.hat .weekly .jackpot__block .btn--block:hover
 {
     background: #4d2ce0 !important;
 }
-.hat .jackpot__block--color2
+.hat .bonus .jackpot__block, .hat .token .jackpot__block
 {
     background: #212121;
     background: linear-gradient(to top, #212121, #363636);
 }
-.hat .jackpot__block--color2 .btn--block
+.hat .bonus .jackpot__block .btn--block, .hat .token .jackpot__block .btn--block
 {
     border: 2px solid #4e4e4e !important;
 }
-.hat .jackpot__block--color2 .btn--block:hover
+.hat .bonus .jackpot__block .btn--block:hover, .hat .token .jackpot__block .btn--block:hover
 {
     background: #212121 !important;
 }
-.hat .jackpot__block--color2 .btn--block .icon-angle-down
+.hat .bonus .jackpot__block .btn--block .icon-angle-down, .hat .token .jackpot__block .btn--block .icon-angle-down
 {
     color: #3b3b3b !important;
 }

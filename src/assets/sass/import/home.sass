@@ -1,0 +1,572 @@
+@import "color.sass" 
+figure, figcaption
+	display: block
+
+.transition
+	-webkit-transition: top 400ms linear
+	-moz-transition: top 400ms linear
+	-ms-transition: top 400ms linear
+	-o-transition: top 400ms linear
+	transition: top 400ms linear
+
+.timeTo
+	font-family: Tahoma, Verdana, Aial, sans-serif
+	font-size: 28px
+	line-height: 108%
+	font-weight: bold
+	height: 32px
+	span
+		vertical-align: top
+	figure
+		display: inline-block
+		margin: 0
+		padding: 0
+	figcaption
+		text-align: center
+		font-size: 12px
+		line-height: 80%
+		font-weight: normal
+		color: #888
+	div
+		position: relative
+		display: inline-block
+		width: 25px
+		height: 30px
+		overflow: hidden
+	ul
+		list-style-type: none
+		margin: 0
+		padding: 0
+		position: absolute
+		left: 3px
+		li
+			margin: 0
+			padding: 0
+			list-style: none
+			font-family: "Roboto"
+.jackpot__block__timer_clock1, .jackpot__block__timer_clock2, .jackpot__block__timer_clock3
+	&.timeTo div
+		height: 34px
+		width: 15px
+	&.timeTo.timeTo-white
+		color: $white
+		font-size: 30px
+		font-weight: 300
+		padding-bottom: 20px
+		li
+			font-size: 20px
+@media(min-width: 540px) and (max-width: 1024px)
+	.jackpot__block__timer_clock1, .jackpot__block__timer_clock2, .jackpot__block__timer_clock3
+		&.timeTo
+			padding-top: 25px
+			line-height: 78%
+			&.timeTo-white
+				color: $white
+				font-size: 39px !important
+				font-weight: 300
+				padding-bottom: 20px
+				position: relative
+				bottom: 0
+				li
+					font-size: 39px
+		&.timeTo div
+			height: 33px
+			width: 30px
+.lottery__rally__timer1, .lottery__rally__timer2, .lottery__rally__timer3
+	&.timeTo
+		padding-top: 25px
+		line-height: 78%
+
+		&.timeTo-white
+			color: $white
+			font-size: 41px
+			font-weight: 300
+			padding-bottom: 20px
+			position: relative
+			bottom: 0
+	&.timeTo div
+		height: 33px
+		width: 30px
+
+.hat
+	background: $gray-white
+	p
+		padding: 0 40px
+		padding-top: 30px
+		font-weight: 300
+		line-height: 36px
+		@media(max-width: 767px)
+			padding: 0
+	.jackpot
+		position: relative
+		top: 70px
+		&__block
+			background: #6d41be
+			background: linear-gradient(to top, #6d41be, #bb64f9)
+			border-radius: 20px
+			padding: 30px 45px
+			margin-bottom: 30px
+			@media(max-width: 500px)
+				padding: 15px 15px
+			p
+				padding-top: 25px	
+				padding-left: 0
+				padding-right: 0		
+				margin-bottom: -13px
+			h4
+				color: $white
+				font-size: 40px
+				font-weight: 500
+				line-height: 40px
+				@media(max-width: 1024px)
+					font-size: 72px
+					padding-bottom: 50px
+					padding-top: 66px
+				@media(max-width: 500px)
+					font-size: 40px
+			p
+				text-transform: uppercase
+				color: $white
+				font-size: 13px
+				@media(min-width: 540px) and (max-width: 1024px)
+					font-size: 23px
+			span
+				font-size: 52px
+				font-weight: 300
+				color: $white
+				@media(min-width: 540px) and (max-width: 1024px)
+					font-size: 108px
+				img
+					padding-left: 10px
+					@media(min-width: 540px) and (max-width: 1024px)
+						width: 50px
+						height: auto
+						padding-left: 20px
+			&__maney
+				p
+					color: #feb78b
+					font-size: 20px
+					font-weight: 100
+					padding-top: 5px
+					@media(min-width: 540px) and (max-width: 1024px)
+						font-size: 36px
+			&__timer
+				p
+					@media(min-width: 540px) and (max-width: 1024px)
+						padding-top: 50px
+				&_clock1, .jackpot__block__timer_clock2, .jackpot__block__timer_clock3
+					span, p
+						display: inline-block
+						padding: 0
+						@media(min-width: 540px) and (max-width: 1024px)
+							font-size: 36px
+					span
+						font-size: 20px
+						padding-left: 3px
+						@media(min-width: 540px) and (max-width: 1024px)
+							font-size: 36px
+					p
+						font-size: 20px
+						padding-top: 10px
+						padding-bottom: 25px
+						@media(min-width: 540px) and (max-width: 1024px)
+							font-size: 36px
+			.btn--block
+				background: none
+				border: 2px solid #9955e0
+				width: 100%
+				padding: 13px 0
+				&:hover
+					background: #6d41be
+				.icon-angle-down
+					color: #b299de
+					font-size: 40px
+	.weekly
+		.jackpot__block
+			background: #4d2ce0
+			background: linear-gradient(to top, #4d2ce0, #8453f7)
+			.btn--block
+				border: 2px solid #8453f7 !important
+				&:hover
+					background: #4d2ce0 !important
+	.bonus, .token
+		.jackpot__block
+			background: #212121
+			background: linear-gradient(to top, #212121, #363636)
+			.btn--block
+				border: 2px solid #4e4e4e !important
+				&:hover
+					background: #212121 !important
+				.icon-angle-down
+					color: #3b3b3b !important
+.lottery--none
+	padding-top: 30px !important
+	margin-top: 0 !important
+	padding-bottom: 20px
+	@media(max-width: 1024px)
+		display: none
+.lottery
+	background: url("../img/lottery--bg.png") no-repeat
+	background-attachment: fixed
+	background-size: cover
+	padding-top: 270px
+	margin-top: -200px
+	h2
+		position: relative
+	h2:before
+		content: ""
+		width: 60px
+		height: 2px
+		background: $red
+		position: absolute
+		left: 0
+		bottom: 0px
+	p
+		font-size: 20px
+		padding-top: 30px
+		padding-bottom: 20px
+	&__rally
+		background: url("../img/lattery--block.png") no-repeat
+		width: 640px
+		margin: 0 auto
+		@media(min-width: 1039px)
+			background-size: 100% 400px
+			width: 100%
+		@media(max-width: 767px)
+			background: #583390
+			width: 100%
+			box-sizing: border-box
+			padding: 0 20px
+			margin-bottom: 40px
+			border-radius: 30px
+
+		.flip-counter
+			position: relative
+			left: 125px
+			&:before
+				content: ""
+				position: absolute
+				left: -60px
+				top: 5px
+				width: 45px
+				height: 75px
+				background: url("../img/triangle.png") no-repeat
+			li.b
+				height: 40px
+		h3
+			font-size: 25px
+			line-height: 48px
+			font-weight: 400
+			padding-top: 50px
+			color: $white
+			@media(max-width: 767px)
+				padding-top: 25px
+		b
+			color: #fdcb8b
+			font-weight: 100
+			padding-top: 10px
+			display: inline-block
+			line-height: 20px
+			padding-right: 95px
+		p
+			color: #fdcb8b
+			font-weight: 100
+			padding-top: 18px
+			line-height: 20px
+			padding-bottom: 0
+		&__timer1, .lottery__rally__timer2, .lottery__rally__timer3
+			p, span
+				display: inline-block
+				color: $white
+			p
+				font-size: 44px
+			.minute
+				padding-left: 9px
+			.hour
+				padding-right: 7px
+			.hour, .minute, .second
+				font-size: 15px
+				color: #9a8ada
+			&--color
+				padding-bottom: 60px
+				margin-left: -15px
+				span
+					font-size: 62px
+				p
+					color: #fdcb8b 
+					font-size: 20px
+			&--btn
+				margin-left: 30px
+				margin-top: 30px
+				margin-bottom: 30px
+				padding: 20px 0
+				width: 100%
+				@media(max-width: 767px)
+					position: relative
+					top: 15px
+					margin: 0 auto
+				p, span
+					display: inline-block
+					padding-top: 0
+					font-size: 20px
+					color: $white
+					@media(max-width: 400px)
+						font-size: 15px
+				p
+					text-transform: uppercase
+					padding-right: 25px
+					border-right: 1px solid #fa7a71
+					font-weight: 400
+					@media(max-width: 400px)
+						padding-right: 15px
+				span
+					font-weight: 100
+					padding-left: 25px
+					@media(max-width: 400px)
+						padding-left: 15px
+		&__timer3
+			span
+				padding-top: 20px
+				font-size: 40px
+				margin-left: -5px
+	&.weekly
+		.lottery__rally
+			background: url("../img/lattery--block1.png") no-repeat
+			@media(min-width: 1039px)
+				background-size: 100% 400px
+	&.bonus,&.token
+		.lottery__rally
+			background: url("../img/lattery--block2.png") no-repeat
+			@media(min-width: 1039px)
+				background-size: 100% 400px
+			.padding
+				padding-top: 37px
+				padding-right: 20px
+	&__past
+		background: $black
+		padding: 25px
+		@media(max-width: 767px)
+			padding: 25px 0
+		&__content
+			border-right: 2px solid #1b1b1c
+			@media(max-width: 1024px)
+				border-right: none
+				border-bottom: 2px solid #1b1b1c
+				margin-top: 15px
+			&--border
+				border: none
+			p
+				color: $gray-lottary
+				position: relative
+				padding-top: 0
+				span
+					color: #ffd5a7
+					padding-left: 5px
+					font-weight: 100
+				&:before
+					content: ""
+					position: absolute
+					bottom: -18px
+					left: 0
+					right: 0
+					margin: 0 auto
+					width: 60px
+					height: 2px
+					background: #1b1b1c
+			&__block
+				padding-top: 10px
+				p
+					text-transform: uppercase
+					font-size: 12px
+					color: $gray-lottary
+					padding-bottom: 10px
+					padding-top: 30px
+					&:before
+						display: none
+				span
+					color: $white
+					font-size: 25px
+					position: relative
+					font-weight: 100
+					@media(max-width: 400px)
+						font-size: 20px
+					p
+						position: absolute
+						top: -28px
+						right: -30px
+						font-size: 12px
+						color: $gray-lottary
+						font-weight: 400
+				&--btn
+					background: none
+					border: 2px solid #343435
+					text-transform: uppercase
+					font-weight: 100
+					margin-top: 30px
+					@media(max-width: 1024px)
+						font-size: 15px
+						margin-bottom: 20px
+.subs
+	background: url("../img/lottery--bg.png")	no-repeat
+	padding-bottom: 90px
+	@media(max-width: 1024px)
+		padding-bottom: 50px
+	h2
+		font-size: 40px
+		font-weight: 300
+		color: $white
+		text-transform: uppercase
+		letter-spacing: 8px
+		padding-top: 60px
+		@media(max-width: 490px)
+			font-size: 25px
+		span
+			color: #c79d7f
+			font-size: 30px
+			letter-spacing: 1px
+			text-transform: none
+	p
+		padding: 30px 40px
+		line-height: 30px
+		color: #808089
+		font-weight: 100
+		@media(max-width: 1024px)
+			font-size: 22px
+			font-weight: 100
+	img
+		@media(max-width: 440px)
+			width: 100%
+	form
+		@media(max-width: 470px)
+			padding: 0 10px
+		input
+			outline: none
+			border-radius: 40px
+			border: 2px solid #666666
+			height: 38px
+			padding-left: 30px
+			font-size: 16px
+			background: none
+			padding-top: 3px
+			margin-right: 20px
+			width: 50%
+			color: #808089
+			margin-bottom: 10px
+			@media(max-width: 470px)
+				width: 100%
+				box-sizing: border-box
+		a
+			@media(max-width: 470px)
+				padding: 15px 0
+				width: 100%
+.work-question
+	background: $gray-white
+	padding-bottom: 85px
+.work
+	h3
+		position: relative
+		margin-bottom: 76px
+		margin-top: 90px
+	h3:before
+		content: ""
+		position: absolute
+		bottom: -30px
+		left: 0
+		right: 0
+		margin: 0 auto
+		width: 60px
+		height: 3px
+		background: #f84e44
+	&__heading
+		p
+			font-size: 20px
+			padding-bottom: 55px
+	&__block
+		background: $white
+		padding: 40px
+		margin-bottom: 100px
+		box-shadow: 0 40px 50px 0 #e1e1e1
+		.work__block__img
+			width: 100%
+			height: 240px
+		p
+			min-height: 60px
+			@media(max-width: 1024px)
+				font-size: 30px
+		&--none
+			@media(max-width: 1024px)
+				display: none
+		&.work__block--margin
+			margin-right: 15px
+			@media(max-width: 1024px)
+				margin-right: 0
+.question
+	padding-bottom: 85px
+	h3
+		padding-bottom: 45px
+	a
+		color: $blue
+		font-size: 18px
+		display: inline-block
+		padding: 25px 0
+		padding-right: 50px
+		box-sizing: border-box
+		width: 100%
+		font-weight: 400
+		position: relative
+	p
+		font-size: 16px
+		padding-bottom: 25px
+	&__content
+		border-bottom: 1px solid #dddddd
+		&--border
+			border-top: 1px solid #dddddd
+	.icon-angle-down
+		display: inline-block
+		font-size: 30px
+		color: $blue
+		margin-left: 20px
+		position: absolute
+		right: 20px
+		top: 30%
+		transition: all 0.3s ease-in-out
+.question__content.active
+	.icon-angle-down
+		transform: rotate(180deg)
+		color: #999999
+.form
+	h3
+		padding-bottom: 30px
+	p
+		padding-bottom: 10px
+	form
+		padding-left: 45px
+		@media(max-width: 1024px)
+			padding: 0
+		input
+			width: 90%
+			outline: none
+			border-radius: 40px
+			border: 2px solid #dcdcdc
+			height: 45px
+			margin-bottom: 20px
+			font-size: 24px
+			padding-left: 20px
+			@media(max-width: 1024px)
+				width: 98%
+		textarea
+			min-height: 140px
+			border-radius: 20px
+			width: 90%
+			outline: none
+			border: 2px solid #dcdcdc
+			height: 45px
+			margin-bottom: 20px
+			font-size: 24px
+			padding: 10px
+			@media(max-width: 1024px)
+				width: 98%
+		.g-recaptcha
+			padding-bottom: 20px
+			@media(max-width: 330px)
+				margin-left: -18px

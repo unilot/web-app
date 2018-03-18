@@ -101,7 +101,7 @@ body
                                 img(src="/assets/img/logo__header.png", alt="")
                     .col-md-5.end-sm.col-sm-6.col-xs-12.center-xs
                         .header__btn
-                            a(href="#").btn.btn--lilac ICO
+                            a(href="https://unilot.io" target="_blank" title="Unilot ICO").btn.btn--lilac ICO
                             a(href="#").btn Принять участие
 
 
@@ -267,7 +267,7 @@ body
                                             .lottery__rally__timer
                                         ="{{if canParticipate}}"
                                         .col-md-10.col-sm-11.col-xs-12.center-xs
-                                        a.btn.lottery__rally__timer1--btn(href="#", data-toggle="modal", data-target="#{{:modal_id}}")
+                                        a.btn.lottery__rally__timer1--btn.modal(href="#", data-toggle="modal", data-target="#{{:modal_id}}")
                                             p Принять участие
                                             span.flex.end-xs {{:bet_amount.amount}} {{:bet_amount.currency}}
                                         ="{{/if}}"
