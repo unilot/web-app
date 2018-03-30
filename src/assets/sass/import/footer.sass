@@ -1,17 +1,23 @@
-@import "color.sass"
+@import 'color.sass'
+
 .footer
-	background: $white
-	padding: 15px 0
-	img
-		margin-left: -30px
-		@media(max-width: 767px)
-			padding-bottom: 30px
-			display: none
-	.icon-facebook, .icon-paper-plane, .icon-reddit, .icon-twitter
-		font-size: 22px
-		cursor: pointer
-		&:hover
-			color: $red
+  padding: 15px 0
+  background: $white
+
+  img
+    margin-left: -30px
+
+    @media (max-width: 767px)
+      display: none
+      padding-bottom: 30px
 
 
+  .icon-facebook,
+  .icon-paper-plane,
+  .icon-reddit,
+  .icon-twitter
+    font-size: 22px
+    cursor: pointer
 
+    &:hover
+      color: $red

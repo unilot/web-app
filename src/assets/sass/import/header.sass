@@ -1,351 +1,413 @@
-@import "color.sass" 
+@import 'color.sass'
+
 .slideout-menu
-	position: fixed
-	z-index: 8
-	top: 0
-	bottom: 0
-	display: none 
-	overflow-y: scroll
-	width: 450px
-	min-height: 100vh
-	-webkit-overflow-scrolling: touch
-	background: #181a22
-	// хром, сафари
-	&::-webkit-scrollbar
-		width: 0
-	-ms-overflow-style: none
-	overflow: -moz-scrollbars-none
-	@media(max-width: 449px)
-		width: 100%
+  display: none
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 450px
+  min-height: 100vh
+  background: #181a22
+  z-index: 8
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+
+  // хром, сафари
+  &::-webkit-scrollbar
+    width: 0
+    overflow: -moz-scrollbars-none
+    -ms-overflow-style: none
+
+  @media (max-width: 449px)
+    width: 100%
+
+
 .slideout-menu-right
-	right: 0
-	overflow-x: hidden
-	ul
-		list-style: none
-		padding-left: 10px
-		padding-top: 35px
-		background: #1e202b
-	li
-		padding-top: 35px
-		padding-left: 40px
-		&:last-child
-			padding-bottom: 55px
-	a
-		color: #cdcdcd
-		font-size: 25px
-		font-weight: 100
-		transition: all 0.3s
-		&:hover
-			color: #f6c38e
-	.lng
-		border-top: 2px solid #2c2e3c
-		border-bottom: 1px solid #2c2e3c
-		background: #1e202b
-		a
-			font-size: 20px
-			color: #cdcdcd
-			position: relative
-			padding: 20px 80px
-			border-bottom: 1px solid #2c2e3c
-			display: inline-block
-			width: 100%
-			box-sizing: border-box
-			img
-				position: absolute
-				left: 50px
-				top: 25px
-			i
-				position: absolute
-				right: 55px
-				transition: all 0.3s ease-in-out
-		&__block
-			a
-				border: none
-		&.active
-			.icon-caret-down
-				transform: rotate(180deg)
-				color: #999999
-	.unilot
-		background: #181a22
-		width: 100%
-		padding-top: 25px
-		padding-bottom: 100px
-		padding-left: 50px
-		p
-			font-size: 14px
-			color: #818494
-			padding: 20px 0
-		a
-			padding: 10px 0px 10px 45px
-			background: $black
-			display: inline-block
-			margin-bottom: 10px
-			width: 75%
-			font-size: 18px
-			position: relative
-			border-radius: 5px
-			color: $white
-			.icon-apple
-				position: absolute
-				left: 10px
-				top: 4px
-				font-size: 30px
-			img
-				position: absolute
-				left: 5px
-				top: 4px
-				font-size: 30px
-	.social
-		position: fixed
-		bottom: 0
-		padding-top: 25px
-		padding-bottom: 25px
-		width: 450px
-		border-top: 2px solid #2c2e3c
-		background: #181a22
-		i
-			padding-left: 50px
-		.icon-facebook, .icon-paper-plane, .icon-reddit, .icon-twitter
-			font-size: 18px
-			color: $white
-			cursor: pointer
-			&:hover
-				color: $red
+  right: 0
+  overflow-x: hidden
+
+  ul
+    padding-top: 35px
+    padding-left: 10px
+    background: #1e202b
+    list-style: none
+
+  li
+    padding-top: 35px
+    padding-left: 40px
+
+    &:last-child
+      padding-bottom: 55px
+
+  a
+    transition: all .3s
+    color: #cdcdcd
+    font-size: 25px
+    font-weight: 100
+
+    &:hover
+      color: #f6c38e
+
+  .lng
+    border-top: 2px solid #2c2e3c
+    border-bottom: 1px solid #2c2e3c
+    background: #1e202b
+
+    a
+      display: inline-block
+      position: relative
+      width: 100%
+      padding: 20px 80px
+      border-bottom: 1px solid #2c2e3c
+      color: #cdcdcd
+      font-size: 20px
+      box-sizing: border-box
+
+      img
+        position: absolute
+        top: 25px
+        left: 50px
+
+      i
+        position: absolute
+        right: 55px
+        transition: all .3s ease-in-out
+
+    &__block
+      a
+        border: 0
+
+    &.active
+      .icon-caret-down
+        transform: rotate(180deg)
+        color: $gray
+
+  .unilot
+    width: 100%
+    padding-top: 25px
+    padding-bottom: 100px
+    padding-left: 50px
+    background: #181a22
+
+    p
+      padding: 20px 0
+      color: #818494
+      font-size: 14px
+
+    a
+      display: inline-block
+      position: relative
+      width: 75%
+      margin-bottom: 10px
+      padding: 10px 0 10px 45px
+      border-radius: 5px
+      background: $black
+      color: $white
+      font-size: 18px
+
+      .icon-apple
+        position: absolute
+        top: 4px
+        left: 10px
+        font-size: 30px
+
+      img
+        position: absolute
+        top: 4px
+        left: 5px
+        font-size: 30px
+
+  .social
+    position: fixed
+    bottom: 0
+    width: 450px
+    padding-top: 25px
+    padding-bottom: 25px
+    border-top: 2px solid #2c2e3c
+    background: #181a22
+
+    i
+      padding-left: 50px
+
+    .icon-facebook,
+    .icon-paper-plane,
+    .icon-reddit,
+    .icon-twitter
+      color: $white
+      font-size: 18px
+      cursor: pointer
+
+      &:hover
+        color: $red
+
 .slideout-menu-left
-	left: 0
+  left: 0
+
 .slideout-panel
-	position: relative
-	z-index: 9
-	min-height: 100vh 
-	background-color: #fff
-	will-change: transform
+  position: relative
+  min-height: 100vh
+  background-color: $white
+  z-index: 9
+  will-change: transform
+
 .slideout-open
-	overflow: hidden
-.slideout-open body,
-.slideout-open .slideout-panel
-	overflow: hidden
-.slideout-open .slideout-menu
-	display: block
-.panel:before 
-	content: ''
-	display: block
-	background-color: rgba(0,0,0,0)
-	transition: background-color 0.5s ease-in-out
-.panel-open:before 
-	content: ''
-	position: absolute
-	top: 0
-	bottom: 0
-	width: 100%
-	background-color: rgba(0,0,0,.5)
-	z-index: 999
+  overflow: hidden
+
+  body,
+  .slideout-panel
+    overflow: hidden
+
+  .slideout-menu
+    display: block
+
+.panel::before
+  display: block
+  transition: background-color .5s ease-in-out
+  background-color: transparent
+  content: ''
+
+.panel-open::before
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 100%
+  background-color: $black-transparent
+  content: ''
+  z-index: 999
+
 #btn
-	display: block
-	width: 36px
-	height: 20px
-	padding-top: 20px
-	cursor: pointer
-	span
-		&:after, &:before
-			content: ""
-			position: absolute
-			left: 0
-			top: -10px
-		&:after
-			top: 10px
-			width: 36px
-			height: 5px
-			background-color: $gray
-			transition: all 0.3s
-			backface-visibility: hidden
-		position: relative
-		display: block
-		width: 30px
-		height: 5px
-		background-color: $gray
-		transition: all 0.3s
-		backface-visibility: hidden
-		&:before
-			width: 36px
-			height: 5px
-			background-color: $gray
-			transition: all 0.3s
-			backface-visibility: hidden
-	&.on span
-		background-color: transparent
-		&:before
-			transform: rotate(45deg) translate(6px, 5px)
-		&:after
-			transform: rotate(-45deg) translate(9px, -8px)
-#btn.on
-	display: none
+  display: block
+  width: 36px
+  height: 20px
+  padding-top: 20px
+  cursor: pointer
+
+  span
+    display: block
+    position: relative
+    width: 30px
+    height: 5px
+    transition: all .3s
+    background-color: $gray
+    backface-visibility: hidden
+
+    &::after,
+    &::before
+      position: absolute
+      left: 0
+      width: 36px
+      height: 5px
+      transition: all .3s
+      background-color: $gray
+      content: ''
+      backface-visibility: hidden
+
+    &::after
+      top: 10px
+
+    &::before
+      top: -10px
+
+  &.on
+    display: none
+
+    span
+      background-color: transparent
+
+    &::before
+      transform: rotate(45deg) translate(6px, 5px)
+
+    &::after
+      transform: rotate(-45deg) translate(9px, -8px)
+
 .menu-close
-	position: absolute
-	top: 20px
-	right: 10%
-	width: 40px
-	height: 40px
-	cursor: pointer
-	span
-		background-color: transparent
-		position: relative
-		top: 20px
-		&:after, &:before
-			content: ""
-			position: absolute
-			left: 0
-			top: -10px
-		&:after
-			content: ''
-			top: 10px
-			width: 36px
-			height: 5px
-			background-color: $gray
-			transition: all 0.3s
-			backface-visibility: hidden
-			border-radius: 2px
-			transform: rotate(-45deg) translate(9px, -8px)
-		&:before
-			content: ''
-			transform: rotate(45deg) translate(6px, 5px)
-			width: 36px
-			height: 5px
-			background-color: $gray
-			transition: all 0.3s
-			backface-visibility: hidden
-			border-radius: 2px
+  position: absolute
+  top: 20px
+  right: 10%
+  width: 40px
+  height: 40px
+  cursor: pointer
+
+  span
+    position: relative
+    top: 20px
+    background-color: transparent
+
+    &::after,
+    &::before
+      position: absolute
+      left: 0
+      width: 36px
+      height: 5px
+      transition: all .3s
+      border-radius: 2px
+      background-color: $gray
+      content: ''
+      backface-visibility: hidden
+
+    &::after
+      top: 10px
+      transform: rotate(-45deg) translate(9px, -8px)
+
+    &::before
+      top: -10px
+      transform: rotate(45deg) translate(6px, 5px)
+
 .top-line-anchor
-	display: inline-block
-	@media(max-width: 767px)
-		left: 20px
+  display: inline-block
 
-
-
-
-
+  @media (max-width: 767px)
+    left: 20px
 
 
 .app__content
-	display: none
-	padding: 30px
-	background: #eeedee
-	border-bottom: 2px solid #c2c2c2
-	@media(max-width: 767px)
-		display: block
-	img
-		width: 100%
-		padding-left: 10px
-	h4
-		font-size: 22px
-		width: 210px
-	p
-		color: $black
-		font-weight: 300
-		line-height: 25px
-		font-size: 17px
-		width: 190px
-	.icon-star, .icon-star_half
-		font-size: 28px
-		color: #f0a213
-		padding-top: 15px
-		display: inline-block
-	.cross
-		margin-top: 50px
-		display: inline-block
-		height: 40px
-		margin-left: -10px
-	span
-		width: 30px
-		height: 3px
-		background: #7a797a
-		display: inline-block
-		position: relative
-		transform: rotate(45deg)
-		&:before
-			content: ""
-			position: absolute
-			bottom: 0px
-			left: 0
-			width: 30px
-			height: 3px
-			background: #7a797a
-			transform: rotate(90deg)
-	&__btn
-		font-size: 20px
-		color: $blue
-		font-weight: 300
+  display: none
+  padding: 30px
+  border-bottom: 2px solid #c2c2c2
+  background: #eeedee
+
+  @media (max-width: 767px)
+    display: block
+
+
+  img
+    width: 100%
+    padding-left: 10px
+
+  h4
+    width: 210px
+    font-size: 22px
+
+  p
+    width: 190px
+    color: $black
+    font-size: 17px
+    font-weight: 300
+    line-height: 25px
+
+  .icon-star,
+  .icon-star_half
+    display: inline-block
+    padding-top: 15px
+    color: #f0a213
+    font-size: 28px
+
+  .cross
+    display: inline-block
+    height: 40px
+    margin-top: 50px
+    margin-left: -10px
+
+  span
+    display: inline-block
+    position: relative
+    width: 30px
+    height: 3px
+    transform: rotate(45deg)
+    background: #7a797a
+
+    &::before
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 30px
+      height: 3px
+      transform: rotate(90deg)
+      background: #7a797a
+      content: ''
+
+  &__btn
+    color: $blue
+    font-size: 20px
+    font-weight: 300
 
 .header
-	width: 100%
-	background-size: cover
-	background: $white
-	position: sticky
-	top: 0
-	z-index: 10
-	&__lng
-		height: 70px
-		width: 90px
-		border-left: 2px solid $gray-white
-		border-right: 2px solid $gray-white
-		@media(max-width: 768px)
-			display: none
-		a
-			font-size: 20px
-			color: $black
-			position: relative
-			display: inline-block
-			width: 100%
-			padding: 25px 25px 25px 35px
-			box-sizing: border-box
-			img
-				position: absolute
-				left: 15px
-				top: 29px
-			i
-				position: absolute
-				right: 10px
-				transition: all 0.3s ease-in-out
-		&__block
-			background: $white
-			border-left: 2px solid #e6e6e6
-			border-right: 2px solid #e6e6e6
-			border-bottom: 2px solid #e6e6e6
-			margin-top: -2px
-			margin-left: -2px
-			width: 90px
-			a
-				padding: 15px 25px 15px 35px
-				img
-					top: 18px
-					left: 10px
-				&:hover
-					background: $gray
-		&.active
-			.icon-caret-down
-				transform: rotate(180deg)
-				color: #999999
-	&__logo
-		a
-			display: inline-block
-			@media(max-width: 767px)
-				padding-bottom: 10px
-	&__btn
-		a
-			display: inline-block
-			@media(max-width: 767px)
-				margin-bottom: 10px
-			@media(max-width: 400px)
-				padding: 15px 25px
-	.btn--lilac
-		background: $lilac
-		background: linear-gradient(to top, #4d2ce0, #8453f7)
-		margin-right: 10px
-		transition: all 0.3s
-		&:hover
-			background: $red
-			background: linear-gradient(to top, $red, $gray)
-	p
-		display: inline-block
-		padding-right: 10px
+  position: sticky
+  top: 0
+  width: 100%
+  background: $white
+  background-size: cover
+  z-index: 10
 
-	
+  &__lng
+    width: 90px
+    height: 70px
+    border-right: 2px solid $gray-white
+    border-left: 2px solid $gray-white
+
+    @media (max-width: 768px)
+      display: none
+
+
+    a
+      display: inline-block
+      position: relative
+      width: 100%
+      padding: 25px 25px 25px 35px
+      color: $black
+      font-size: 20px
+      box-sizing: border-box
+
+      img
+        position: absolute
+        top: 29px
+        left: 15px
+
+      i
+        position: absolute
+        right: 10px
+        transition: all .3s ease-in-out
+
+    &__block
+      width: 90px
+      margin-top: -2px
+      margin-left: -2px
+      border: 2px solid #e6e6e6
+      border-top: 0
+      background: $white
+
+      a
+        padding: 15px 25px 15px 35px
+
+        img
+          top: 18px
+          left: 10px
+
+        &:hover
+          background: $gray
+
+    &.active
+      .icon-caret-down
+        transform: rotate(180deg)
+        color: $gray
+
+  &__logo
+    a
+      display: inline-block
+      @media (max-width: 767px)
+        padding-bottom: 10px
+
+  &__btn
+    a
+      display: inline-block
+
+      @media (max-width: 767px)
+        margin-bottom: 10px
+
+      @media (max-width: 400px)
+        padding: 15px 25px
+
+
+  .btn--lilac
+    margin-right: 10px
+    transition: all .3s
+    background-color: $lilac
+    background-image: linear-gradient(to top, #4d2ce0, #8453f7)
+
+    &:hover
+      background-color: $red
+      background-image: linear-gradient(to top, $red, $gray)
+
+  p
+    display: inline-block
+    padding-right: 10px

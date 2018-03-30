@@ -62,3 +62,4 @@ app/assets/img
 /public/
 /src/assets/js/tmp/
 /src/assets/css/sass/sass.css
+.sass-lint.yml
