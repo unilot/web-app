@@ -83,9 +83,9 @@ $(function () {
         var seconds = Math.floor((distance % _minute) / _second);
         if (seconds < 10) seconds = '0' + seconds;
         $('.lottery__rally__timer3--color span').text(days);
-        $('.timer_hou').text(hours);
-        $('.timer_minut').text(minutes);
-        $('.timer_secon').text(seconds);
+        $('.js-timer-hours').text(hours);
+        $('.js-timer-minutes').text(minutes);
+        $('.js-timer-seconds').text(seconds);
     }
 
     timer = setInterval(showRemaining, 1000);

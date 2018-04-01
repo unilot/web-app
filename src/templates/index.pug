@@ -224,12 +224,11 @@ body
                     p Джекпот
                     span {{:prize_amount.amount}}
                         img(src="assets/img/jackpot.png", alt="ETH")
-                        //- rewrite to accept prize_amount.currency
-                    .jackpot__block__maney
+                        //- todo: rewrite to accept prize_amount.currency
+                    .jackpot__block__fiat
                         p US ${{:prize_amount_fiat}}
+                    p Успей принять участие
                     .jackpot__block__timer
-                        p Успей принять участие
-                        .jackpot__block__timer
                     .row
                         .col-xs-12
                             a.btn.btn--block(href="#game-{{:id}}")
@@ -270,23 +269,12 @@ body
                                                 span.flex.end-xs {{:bet_amount.amount}} {{:bet_amount.currency}}
                                         ="{{/if}}"
     script#dailyTimerTemplate(type="text/x-jsrender")
-        span %D
-        p Дней
+        span.day-value %D 
+        span.day-label дней
     script#hourlyTimerTemplate(type="text/x-jsrender")
-        .row.end-sm.center-xs
-            .col-xs-3
-                p.timer_hour %H
-                .hour Часа
-            .col-xs-1
-                span :
-            .col-xs-3
-                p.timer_minute %M
-                .minute Минут
-            .col-xs-1
-                span :
-            .col-xs-3
-                p.timer_second %S
-                .second Секунд
+        span.timer-value.js-timer-hours %H
+        span.timer-value.js-timer-minutes %M
+        span.timer-value.js-timer-seconds %S
     block script
         script(src="//localhost:35729/livereload.js" defer)
         script(src="/assets/js/main.js" defer)
