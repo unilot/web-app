@@ -96,7 +96,43 @@ $(function () {
     var parallaxInstance = new Parallax(scene);
     // ----------------------------------------------------------------
 
+    // Render games
     getToken()
         .then(getGames)
         .then(renderTemplates);
+    // ----------------------------------------------------------------
 });
+
+
+
+// Modal
+var overlay = $('#modalOverlay');
+var content = $('#panel');
+
+function openModal() {
+    overlay.removeClass('closed');
+    content.addClass('blurred');
+    $('body').addClass('no-scroll');
+}
+
+function closeModal() {
+    overlay.addClass('closed');
+    content.removeClass('blurred');
+    $('body').removeClass('no-scroll');
+}
+
+$('#modalOpen').on('click', (e) => {
+    openModal();
+});
+
+$('#modalClose').on('click', (e) => {
+    closeModal();
+});
+
+// close modal if overlay is clicked, not the modal itself
+overlay.on('click', function(event) {
+    if(event.target == this) {
+        closeModal();
+    }
+});
+// ----------------------------------------------------------------

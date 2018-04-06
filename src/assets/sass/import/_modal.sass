@@ -1,0 +1,138 @@
+$btn-close-size: 24px
+
+@keyframes slide-in
+  from
+    top: -5%
+    opacity: .5
+
+  to
+    top: 0
+    opacity: 1
+
+@keyframes slide-out
+  from
+    top: 0
+    opacity: 1
+
+  to
+    top: -10%
+    opacity: 0
+
+
+.modal-overlay
+  display: flex
+  position: fixed
+  top: 0
+  left: 0
+  align-items: center
+  justify-content: center
+  width: 100vw
+  height: 100vh
+  transition: all .3s ease-in
+  background: $black-transparent
+  z-index: 10
+
+  &.closed
+    opacity: 0
+    visibility: hidden
+
+    .modal
+      animation: slide-out .3s
+
+.modal
+  position: relative
+  width: 300px
+  min-width: 300px
+  max-width: 440px
+  padding: 20px 30px
+  border-radius: 10px
+  background: $white
+  box-shadow: 0 5px 20px $black-transparent
+  box-sizing: border-box
+  animation: slide-in .3s
+
+  @media (min-width: 420px)
+    width: 80vw
+
+    .modal-title,
+    .modal-timer
+      text-align: center
+
+
+  .modal-title,
+  h4,
+  p,
+  li
+    color: $black
+    font-weight: normal
+
+  p,
+  li
+    margin-bottom: .3em
+    font-size: 16px
+
+  .modal-title
+    margin-bottom: .5em
+    font-size: 1.5em
+
+  h4
+    margin: 1em 0 .4em
+    font-size: 1.1em
+
+  .modal-timer-value
+    margin: 5px 0
+    font-size: 3em
+
+  ol
+    margin-left: 1em
+    list-style-type: decimal
+
+  ul
+    margin: .6em 0 0 1em
+    list-style-type: disc
+
+.btn-close
+  display: inline-block
+  position: absolute
+  top: 10px
+  right: 10px
+  width: $btn-close-size
+  height: $btn-close-size
+  padding: 0
+  border: 0
+  background: transparent
+  color: $gray
+  font-size: $btn-close-size
+  line-height: $btn-close-size
+
+  &:hover
+    color: $gray-darker
+    cursor: pointer
+
+.modal-content
+  input,
+  button
+    width: 100%
+    max-width: 400px
+
+.modal-instructions
+  max-height: 25vh
+  overflow-y: auto
+
+  @media (min-height: 500px)
+    max-height: 50vh
+
+
+.modal-contract-id
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+// Blur background elements (apply to main content container when modal is opened)
+.blurred
+  transform: scaleX(1.004)  // scale container to avoid blurry edges on both sides
+  filter: blur(2px)
+
+// Avoid background scrolling (apply to <body> when modal is opened)
+.no-scroll
+  overflow: hidden

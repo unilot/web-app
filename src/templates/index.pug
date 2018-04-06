@@ -7,8 +7,30 @@ html(lang="ru")
         link(rel="stylesheet", href="/assets/css/main.css")
 
 body
-    #dailyModal
-    #weeklyModal
+    //- #dailyModal
+    //- #weeklyModal
+    #modalOverlay.modal-overlay.closed
+        .modal
+            button#modalClose.btn-close.pull-right &times;
+            h3.modal-title Дневная лотерея
+            .modal-content
+                .modal-timer
+                    p Лотерея закончится через:
+                    p.modal-timer-value 16:14:27
+
+                h4 Как принять участие
+                .modal-instructions
+                    ol
+                        li Скопируйте указанный ниже адрес кошелька Unilot
+                        li Перейдите в приложение, откуда вы управляете своим кошельком
+                        li Отправьте 0.01 ETH на скопированный ранее адрес со следующими параметрами:
+                            ul
+                                li Gas Limit - 90000
+                                li Gas Price - 2 Gwei
+                
+                h4 Адрес кошелька Unilot
+                input.modal-contract-id(readonly, value="0x378356e2391cbaccb1cb11d9f7b1fe6b244819f1")
+                button.btn.btn-copy Скопировать
 
     //- block content
     #menu.slideout-menu.slideout-menu-right
@@ -102,7 +124,7 @@ body
                     .col-md-5.end-sm.col-sm-6.col-xs-12.center-xs
                         .header__btn
                             a(href="https://unilot.io" target="_blank" title="Unilot ICO").btn.btn--lilac ICO
-                            a(href="#").btn Принять участие
+                            a(href="#")#modalOpen.btn Принять участие
 
 
         //- block content
@@ -275,6 +297,8 @@ body
         span.timer-value.js-timer-hours %H
         span.timer-value.js-timer-minutes %M
         span.timer-value.js-timer-seconds %S
+    //- script#gameModalTemplate(type="text/x-jsrender")
+        .modal I'm a modal, rawr
     block script
         script(src="//localhost:35729/livereload.js" defer)
         script(src="/assets/js/main.js" defer)
