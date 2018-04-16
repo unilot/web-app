@@ -99,40 +99,51 @@ $(function () {
     // Render games
     getToken()
         .then(getGames)
-        .then(renderTemplates);
+        .then(renderTemplates)
+        .then(renderModals);
     // ----------------------------------------------------------------
 });
 
-
-
 // Modal
-var overlay = $('#modalOverlay');
-var content = $('#panel');
+function renderModals(gamesData) {
+    function Modal() {}
 
-function openModal() {
-    overlay.removeClass('closed');
-    content.addClass('blurred');
-    $('body').addClass('no-scroll');
-}
+    Modal.prototype = {
+        $body: $('body'),
+        $overlay: $('.js-modal-overlay'),
+        $content: $('.js-content'),
+        $modalTemplate: $.templates('#gameModalTemplate'),
 
-function closeModal() {
-    overlay.addClass('closed');
-    content.removeClass('blurred');
-    $('body').removeClass('no-scroll');
-}
+        openModal: () => {
+            $('.js-modal-overlay').removeClass('closed');
+            $('.js-content').addClass('blurred');
+            $('body').addClass('no-scroll');
+        },
 
-$('#modalOpen').on('click', (e) => {
-    openModal();
-});
-
-$('#modalClose').on('click', (e) => {
-    closeModal();
-});
-
-// close modal if overlay is clicked, not the modal itself
-overlay.on('click', function(event) {
-    if(event.target == this) {
-        closeModal();
+        closeModal: () => {
+            $('.js-modal-overlay').addClass('closed');
+            $('.js-content').removeClass('blurred');
+            $('body').removeClass('no-scroll');
+        }
     }
-});
-// ----------------------------------------------------------------
+
+    var modal = new Modal();
+
+    $('.js-modal-open').on('click', (e) => {
+        // var gametype = $(e.target).data('gametype');
+        // alert(gametype);
+        modal.openModal();
+    });
+
+
+    $('.js-modal-close').on('click', (e) => {
+        modal.closeModal();
+    });
+
+    // close modal if overlay is clicked, not the modal itself
+    modal.$overlay.on('click', function(event) {
+        if(event.target == this) {
+            modal.closeModal();
+        }
+    });
+}

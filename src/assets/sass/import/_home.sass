@@ -279,9 +279,10 @@ figcaption
   margin-top: -200px
   padding-top: 270px
   background-attachment: fixed
-  background-image: url('../img/lottery--bg.png')
-  background-repeat: no-repeat
-  background-size: cover
+  background-color: $black
+  // background-image: url('../img/lottery--bg.png')
+  // background-repeat: no-repeat
+  // background-size: cover
 
   h2
     position: relative
@@ -360,7 +361,7 @@ figcaption
       font-weight: 100
       line-height: 20px
 
-    &__timer1,
+    .lottery__rally__timer1,
     .lottery__rally__timer2,
     .lottery__rally__timer3
       p,
@@ -393,48 +394,6 @@ figcaption
         p
           color: #fdcb8b
           font-size: 20px
-
-      &--btn
-        width: 100%
-        margin-top: 30px
-        margin-bottom: 30px
-        margin-left: 30px
-        padding: 20px 0
-
-        @media (max-width: 767px)
-          position: relative
-          top: 15px
-          margin: 0 auto
-
-
-        p,
-        span
-          display: inline-block
-          padding-top: 0
-          color: $white
-          font-size: 20px
-
-          @media (max-width: 400px)
-            font-size: 15px
-
-
-        p
-          text-transform: uppercase
-          padding-right: 25px
-          border-right: 1px solid #fa7a71
-          font-weight: 400
-
-          @media (max-width: 400px)
-            padding-right: 15px
-
-
-        span
-          padding-left: 25px
-          font-weight: 100
-
-          @media (max-width: 400px)
-            padding-left: 15px
-
 
     &__timer3
       span
@@ -550,7 +509,8 @@ figcaption
 
 .subs
   padding-bottom: 90px
-  background: url('../img/lottery--bg.png')  no-repeat
+  background-color: $black
+  // background: url('../img/lottery--bg.png')  no-repeat
 
   @media (max-width: 1024px)
     padding-bottom: 50px
@@ -777,3 +737,44 @@ figcaption
   .timer-value
     background: yellow
     color: red
+
+.btn-participate
+  width: 100%
+  margin-top: 30px
+  margin-bottom: 30px
+  margin-left: 30px
+  padding: 20px 0
+
+  @media (max-width: 767px)
+    position: relative
+    top: 15px
+    margin: 0 auto
+
+
+  p,
+  span
+    display: inline-block
+    padding-top: 0
+    color: $white
+    font-size: 20px
+
+    @media (max-width: 400px)
+      font-size: 15px
+
+
+  p
+    padding-right: 25px
+    border-right: 1px solid #fa7a71
+    font-weight: 400
+    text-transform: uppercase
+
+    @media (max-width: 400px)
+      padding-right: 15px
+
+
+  span
+    padding-left: 25px
+    font-weight: 100
+
+    @media (max-width: 400px)
+      padding-left: 15px

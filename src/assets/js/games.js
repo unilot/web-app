@@ -33,31 +33,33 @@ var games = {};
 // Fetch game data from API
 function getToken() {
     return new Promise(function (resolve, reject) {
-        $.get("/token/", function (token) {
-            resolve(token)
-        })
-            .fail(function () {
-                reject("failed");
-            });
+        resolve();
+        // $.get("/token/", function (token) {
+        //     resolve(token)
+        // })
+        //     .fail(function () {
+        //         reject("failed");
+        //     });
     });
 }
 
 function getGames(token) {
     return new Promise(function (resolve, reject) {
-        $.ajax({
-            url: baseUrl + '/games/',
-            method: "GET",
-            beforeSend: function (request) {
-                request.setRequestHeader("Authorization", 'Bearer ' + token)
-            },
-            success: function (response) {
-                resolve(response)
-            },
-            error: function (error) {
-                console.log("Error", error);
-                reject(error)
-            }
-        });
+        resolve(hardcoded);
+        // $.ajax({
+        //     url: baseUrl + '/games/',
+        //     method: "GET",
+        //     beforeSend: function (request) {
+        //         request.setRequestHeader("Authorization", 'Bearer ' + token)
+        //     },
+        //     success: function (response) {
+        //         resolve(response)
+        //     },
+        //     error: function (error) {
+        //         console.log("Error", error);
+        //         reject(error)
+        //     }
+        // });
     });
 }
 
@@ -81,7 +83,7 @@ function renderGame(gameData) {
     result.$container.addClass(getGameTypeName(result.data.type));
     result.$summaryContainer.addClass(getGameTypeName(result.data.type));
 
-    $('.modal', result.$container).modal();
+    // $('.modal', result.$container).modal();
 
     //Processing ending time
     var gameEndTime = moment.tz(gameData.ending_at, 'UTC');
@@ -143,4 +145,73 @@ function renderTemplates(gamesData) {
 
         games[gameData.id] = renderGame(gameData);
     }
+
+    return gamesData;
 }
+
+// Hardcoded object with games to test when API is unavailable
+var hardcoded = [
+    {
+        "id": 37,
+        "status": 10,
+        "type": 10,
+        "smart_contract_id": "0x0b3cf2fefe2019c6b2a5603570b937609a99fda5",
+        "prize_amount": {
+            "amount": 0.0124,
+            "currency": "ETH"
+        },
+        "prize_amount_fiat": 3.4102479999999997,
+        "num_players": 5,
+        "bet_amount": {
+            "amount": 0.003,
+            "currency": "ETH"
+        },
+        "bet_amount_fiat": 0.82506,
+        "gas_price": 2,
+        "gas_limit": 90000,
+        "started_at": "2018-04-11T07:03:10Z",
+        "ending_at": "2018-04-12T07:03:19Z"
+    },
+    {
+        "id": 38,
+        "status": 10,
+        "type": 30,
+        "smart_contract_id": "0x0b3cf2fefe2019c6b2a5603570b937609a99fda5",
+        "prize_amount": {
+            "amount": 0.51,
+            "currency": "ETH"
+        },
+        "prize_amount_fiat": 3.4102479999999997,
+        "num_players": 5,
+        "bet_amount": {
+            "amount": 0.003,
+            "currency": "ETH"
+        },
+        "bet_amount_fiat": 0.82506,
+        "gas_price": 2,
+        "gas_limit": 90000,
+        "started_at": "2018-04-11T07:03:10Z",
+        "ending_at": "2018-04-18T07:03:19Z"
+    },
+    {
+        "id": 39,
+        "status": 10,
+        "type": 50,
+        "smart_contract_id": "---",
+        "prize_amount": {
+            "amount": 0.06332,
+            "currency": "ETH"
+        },
+        "prize_amount_fiat": 0.42628099999999997,
+        "num_players": 0,
+        "bet_amount": {
+            "amount": 0,
+            "currency": "ETH"
+        },
+        "bet_amount_fiat": 1.10008,
+        "gas_price": 0,
+        "gas_limit": 0,
+        "started_at": "2018-04-06T07:03:34Z",
+        "ending_at": "2018-05-06T07:03:38Z"
+    }
+];
