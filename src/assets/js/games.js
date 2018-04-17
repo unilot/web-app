@@ -83,8 +83,6 @@ function renderGame(gameData) {
     result.$container.addClass(getGameTypeName(result.data.type));
     result.$summaryContainer.addClass(getGameTypeName(result.data.type));
 
-    // $('.modal', result.$container).modal();
-
     //Processing ending time
     var gameEndTime = moment.tz(gameData.ending_at, 'UTC');
     var now = moment.tz(new Date(), 'UTC');

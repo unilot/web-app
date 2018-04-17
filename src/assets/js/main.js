@@ -105,22 +105,55 @@ $(function () {
 });
 
 // Modal
-function renderModals(gamesData) {
-    function Modal() {}
+function renderModals() {
+    function Modal() {
+        var $overlay = $('.js-modal-overlay');
+        var $modalTemplate = $.templates('#gameModalTemplate');
 
-    Modal.prototype = {
-        $body: $('body'),
-        $overlay: $('.js-modal-overlay'),
-        $content: $('.js-content'),
-        $modalTemplate: $.templates('#gameModalTemplate'),
+        $('.js-modal-open').on('click', function(e) {
+            var game = {
+                // add date/time here
+            };
 
-        openModal: () => {
+            switch($(e.target).data('gametype')) {
+                case 10:
+                    game.type = 'Дневная';
+                    break;
+                case 30:
+                    game.type = 'Недельная';
+                    break;
+                default:
+                    break;
+            }
+
+            Modal.prototype.renderModal($overlay, $modalTemplate, game);
+        });
+
+        $overlay.on('click', '.js-modal-close', function(e) {
+            Modal.prototype.closeModal();
+        });
+
+        // close modal if overlay is clicked, not the modal itself
+        $overlay.on('click', function(e) {
+            if(e.target == $overlay[0]) {
+                Modal.prototype.closeModal();
+            }
+        });
+    }
+
+    Modal.prototype = {        
+        renderModal: function(modalContainer, template, game) {
+            modalContainer.html(template.render(game));
+            this.openModal();
+        },
+
+        openModal: function() {
             $('.js-modal-overlay').removeClass('closed');
             $('.js-content').addClass('blurred');
             $('body').addClass('no-scroll');
         },
 
-        closeModal: () => {
+        closeModal: function() {
             $('.js-modal-overlay').addClass('closed');
             $('.js-content').removeClass('blurred');
             $('body').removeClass('no-scroll');
@@ -128,22 +161,4 @@ function renderModals(gamesData) {
     }
 
     var modal = new Modal();
-
-    $('.js-modal-open').on('click', (e) => {
-        // var gametype = $(e.target).data('gametype');
-        // alert(gametype);
-        modal.openModal();
-    });
-
-
-    $('.js-modal-close').on('click', (e) => {
-        modal.closeModal();
-    });
-
-    // close modal if overlay is clicked, not the modal itself
-    modal.$overlay.on('click', function(event) {
-        if(event.target == this) {
-            modal.closeModal();
-        }
-    });
 }
