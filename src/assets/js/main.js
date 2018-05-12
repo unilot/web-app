@@ -7,7 +7,7 @@ $(function () {
                 top = $(id).offset().top;
             $('body,html').animate({scrollTop: top}, 1000);
         });
-    });
+    }); 
     // ----------------------------------------------------------------
 
     // Боковое меню
@@ -59,38 +59,6 @@ $(function () {
     });
     // ----------------------------------------------------------------
 
-    // Таймер дневной
-    var d = [5, 4, 3, 2, 1, 7, 6];
-    var today = new Date();
-    var end = new Date(today.getFullYear(), today.getMonth(), today.getDate() + d[today.getDay()], 16, 0, 0);
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
-
-    function showRemaining() {
-        var now = new Date();
-        var distance = end - now;
-        if (distance < 0) {
-            return;
-        }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        if (hours < 10) hours = '0' + hours;
-        var minutes = Math.floor((distance % _hour) / _minute);
-        if (minutes < 10) minutes = '0' + minutes;
-        var seconds = Math.floor((distance % _minute) / _second);
-        if (seconds < 10) seconds = '0' + seconds;
-        $('.lottery__rally__timer3--color span').text(days);
-        $('.js-timer-hours').text(hours);
-        $('.js-timer-minutes').text(minutes);
-        $('.js-timer-seconds').text(seconds);
-    }
-
-    timer = setInterval(showRemaining, 1000);
-    // ----------------------------------------------------------------
-
     // Параллакс
     var scene = $('.scene').get(0);
     var parallaxInstance = new Parallax(scene);
@@ -101,64 +69,6 @@ $(function () {
         .then(getGames)
         .then(renderTemplates)
         .then(renderModals);
+
     // ----------------------------------------------------------------
 });
-
-// Modal
-function renderModals() {
-    function Modal() {
-        var $overlay = $('.js-modal-overlay');
-        var $modalTemplate = $.templates('#gameModalTemplate');
-
-        $('.js-modal-open').on('click', function(e) {
-            var game = {
-                // add date/time here
-            };
-
-            switch($(e.target).data('gametype')) {
-                case 10:
-                    game.type = 'Дневная';
-                    break;
-                case 30:
-                    game.type = 'Недельная';
-                    break;
-                default:
-                    break;
-            }
-
-            Modal.prototype.renderModal($overlay, $modalTemplate, game);
-        });
-
-        $overlay.on('click', '.js-modal-close', function(e) {
-            Modal.prototype.closeModal();
-        });
-
-        // close modal if overlay is clicked, not the modal itself
-        $overlay.on('click', function(e) {
-            if(e.target == $overlay[0]) {
-                Modal.prototype.closeModal();
-            }
-        });
-    }
-
-    Modal.prototype = {        
-        renderModal: function(modalContainer, template, game) {
-            modalContainer.html(template.render(game));
-            this.openModal();
-        },
-
-        openModal: function() {
-            $('.js-modal-overlay').removeClass('closed');
-            $('.js-content').addClass('blurred');
-            $('body').addClass('no-scroll');
-        },
-
-        closeModal: function() {
-            $('.js-modal-overlay').addClass('closed');
-            $('.js-content').removeClass('blurred');
-            $('body').removeClass('no-scroll');
-        }
-    }
-
-    var modal = new Modal();
-}

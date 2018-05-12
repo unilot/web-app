@@ -59,6 +59,11 @@ $btn-close-size: 24px
       text-align: center
 
 
+  input,
+  button:not(.btn-close)
+    width: 100%
+    max-width: 400px
+
   .modal-title,
   h4,
   p,
@@ -108,12 +113,6 @@ $btn-close-size: 24px
   &:hover
     color: $gray-darker
     cursor: pointer
-
-.modal-content
-  input,
-  button
-    width: 100%
-    max-width: 400px
 
 .modal-instructions
   max-height: 25vh

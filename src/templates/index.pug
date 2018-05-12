@@ -264,7 +264,7 @@ body
                                             .lottery__rally__timer
                                         ="{{if canParticipate}}"
                                         .col-md-10.col-sm-11.col-xs-12.center-xs
-                                            button.btn.btn-participate.js-modal-open(data-gametype="{{:type}}")
+                                            button.btn.btn-participate.js-modal-open(data-gametype="{{:type}}", data-endtime="{{:ending_at}}", data-contractid="{{:smart_contract_id}}")
                                                 p Принять участие
                                                 span.flex.end-xs {{:bet_amount.amount}} {{:bet_amount.currency}}
                                         ="{{/if}}"
@@ -284,7 +284,7 @@ body
                 .modal-content
                     .modal-timer
                         p Лотерея закончится через:
-                        p.modal-timer-value 16:14:27
+                        p.modal-timer-value %H:%M:%S
 
                     h4 Как принять участие
                     .modal-instructions
@@ -297,7 +297,7 @@ body
                                     li Gas Price - 2 Gwei
                 
                 h4 Адрес кошелька Unilot
-                input.modal-contract-id(readonly, value="0x378356e2391cbaccb1cb11d9f7b1fe6b244819f1")
+                input.modal-contract-id(readonly)
                 button.btn.btn-copy Скопировать
     block script
         script(src="//localhost:35729/livereload.js" defer)

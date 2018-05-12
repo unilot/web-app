@@ -350,14 +350,14 @@ figcaption
       display: inline-block
       padding-top: 10px
       padding-right: 95px
-      color: #fdcb8b
+      color: $gold
       font-weight: 100
       line-height: 20px
 
     p
       padding-top: 18px
       padding-bottom: 0
-      color: #fdcb8b
+      color: $gold
       font-weight: 100
       line-height: 20px
 
@@ -392,7 +392,7 @@ figcaption
           font-size: 62px
 
         p
-          color: #fdcb8b
+          color: $gold
           font-size: 20px
 
     &__timer3
@@ -729,14 +729,21 @@ figcaption
   .day-label
     font-size: 20px
 
-  .timer-value:not(:last-child)::after
-    margin: 0 .1em
-    content: ':'
+.timer-value:not(:last-child)::after
+  margin: 0 .1em
+  content: ':'
 
 .lottery
-  .timer-value
-    background: yellow
-    color: red
+  &__rally__timer
+    margin-top: 20px
+    color: $white
+    font-size: 32px
+    font-weight: 200
+
+  .day-label
+    color: $gold
+    font-size: 16px
+    font-weight: 100
 
 .btn-participate
   width: 100%

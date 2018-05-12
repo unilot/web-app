@@ -33,6 +33,7 @@ const jsSrc = [
     `${nodeModules}/flip-counter/js/flipcounter.js`,
     `${nodeModules}/jsrender/jsrender.min.js`,
     `${assetsDir}/js/games.js`,
+    `${assetsDir}/js/modal.js`,
     `${assetsDir}/js/main.js`,
 ];
 

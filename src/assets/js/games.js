@@ -84,28 +84,21 @@ function renderGame(gameData) {
     result.$summaryContainer.addClass(getGameTypeName(result.data.type));
 
     //Processing ending time
-    var gameEndTime = moment.tz(gameData.ending_at, 'UTC');
-    var now = moment.tz(new Date(), 'UTC');
-    var timeTemplate = $.templates('#hourlyTimerTemplate');
-    var $flipCounterContainer = $('.flip-counter', result.$container);
-
-    //Choosing template to render. Setting daily if more than 24 hours left till the end of game
-    if ( gameEndTime.diff(now, 'hours') > 24 ) {
-        timeTemplate = $.templates('#dailyTimerTemplate');
-    }
-
+    var timer = processEndingTime(gameData.ending_at);
+    
     //Setting up counters
     $('.jackpot__block__timer', result.$summaryContainer)
-        .countdown(gameEndTime.toDate(), function (event) {
-        $(this).html(event.strftime(timeTemplate.render()));
+        .countdown(timer.time.toDate(), function (event) {
+        $(this).html(event.strftime(timer.template.render()));
     });
 
     $('.lottery__rally__timer', result.$container)
-        .countdown(gameEndTime.toDate(), function (event) {
-            $(this).html(event.strftime(timeTemplate.render()));
-        });
+        .countdown(timer.time.toDate(), function (event) {
+            $(this).html(event.strftime(timer.template.render()));
+    });
 
     //If containers has flippers setup them
+    var $flipCounterContainer = $('.flip-counter', result.$container);
     if ($flipCounterContainer.length > 0) {
         $flipCounterContainer.each(function (index, element) {
             //Creating unique id for our flipper
@@ -121,6 +114,19 @@ function renderGame(gameData) {
     }
 
     return result;
+}
+
+function processEndingTime(endingTime) {
+    var time = moment.tz(endingTime, 'UTC');
+    var now = moment.tz(new Date(), 'UTC');
+    var template = $.templates('#hourlyTimerTemplate');
+
+    //Choosing template to render. Setting daily if more than 24 hours left till the end of game
+    if(time.diff(now, 'hours') > 24) {
+        template = $.templates('#dailyTimerTemplate');
+    }
+
+    return {template, time};
 }
 
 // Render templates based on game data
@@ -167,8 +173,8 @@ var hardcoded = [
         "bet_amount_fiat": 0.82506,
         "gas_price": 2,
         "gas_limit": 90000,
-        "started_at": "2018-04-11T07:03:10Z",
-        "ending_at": "2018-04-12T07:03:19Z"
+        "started_at": "2018-05-11T07:03:10Z",
+        "ending_at": "2018-05-12T07:03:19Z"
     },
     {
         "id": 38,
@@ -188,8 +194,8 @@ var hardcoded = [
         "bet_amount_fiat": 0.82506,
         "gas_price": 2,
         "gas_limit": 90000,
-        "started_at": "2018-04-11T07:03:10Z",
-        "ending_at": "2018-04-18T07:03:19Z"
+        "started_at": "2018-05-10T07:03:10Z",
+        "ending_at": "2018-05-17T07:03:19Z"
     },
     {
         "id": 39,
@@ -209,7 +215,7 @@ var hardcoded = [
         "bet_amount_fiat": 1.10008,
         "gas_price": 0,
         "gas_limit": 0,
-        "started_at": "2018-04-06T07:03:34Z",
-        "ending_at": "2018-05-06T07:03:38Z"
+        "started_at": "2018-04-20T07:03:34Z",
+        "ending_at": "2018-05-20T07:03:38Z"
     }
 ];
