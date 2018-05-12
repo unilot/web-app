@@ -70,6 +70,8 @@ function renderGame(gameData) {
     renderData.canParticipate = ([gameType.BONUS, gameType.TOKEN].indexOf(gameData.type) === -1);
     //Rounding fiat amount to avoid numbers like 8.10000000000000000000000000000000000000000000000001
     renderData.prize_amount_fiat = Math.round(renderData.prize_amount_fiat * 100)/100;
+    // Rounding prize amount to 2 decimal places
+    renderData.prize_amount.amount = (renderData.prize_amount.amount).toFixed(3);
 
     //Adding game containers and remembering them
     var result = {
@@ -108,7 +110,7 @@ function renderGame(gameData) {
 
             //Creating flipper object and adding it to list in result object
             result.flipCounters.push(new flipCounter(flipCounterId,
-                { value: gameData.prize_amount.amount, inc: 0, pace: 1000, auto: true })
+                { value: renderData.prize_amount.amount, inc: 0, pace: 1000, auto: false })
             );
         });
     }
